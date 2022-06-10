@@ -1,0 +1,14 @@
+{
+    "name": "LitGirl - Engine for HTML Programing",
+    "short_name": "LitGirl",
+    "icons": [
+        {
+            "src": "/android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#22272E",
+    "background_color": "#22272E",
+    "display": "standalone"
+}
