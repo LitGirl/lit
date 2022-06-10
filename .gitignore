@@ -1,0 +1,13 @@
+# Ignored files/folders
+/partials
+/layouts
+/assets/css/app.css
+components.html
+design-kit.html
+design-resources.html
+developer-resources.html
+frameworks.html
+recomendations.html
+starter.html
+style-guide.html
+tutorials.html
