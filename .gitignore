@@ -1,13 +1,21 @@
 # Ignored files/folders
+.gitignore
 /partials
 /layouts
 /assets/css/app.css
+/assets/css/code.css
 components.html
 design-kit.html
 design-resources.html
 developer-resources.html
 frameworks.html
 recomendations.html
-starter.html
 style-guide.html
 tutorials.html
+*.md.html
+code.md
+control_structures.md
+example.md
+iterators.md
+templates.md
+use.md

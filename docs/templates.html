@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>LitGirl — Guía de inicio rápido</title>
+    <title>LitGirl — Templates</title>
     <!--Favicons-->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32x32.png">
@@ -635,7 +635,7 @@
                                 href="javascript:void(0);"
                                 class="text-comet dark:text-manatee hover:text-oyster dark:hover:text-oyster ml-4 text-sm font-medium"
                                 aria-current="page"
-                                >Empezar</a
+                                >Templates</a
                               >
                             </div>
                           </li>
@@ -643,7 +643,7 @@
                       </nav>
                     </div>
                   <h1 data-animate="title" class="py-10 mx-auto text-4xl font-light leading-none tracking-tighter text-comet dark:text-manatee lg:text-5xl">
-                    Iniciando con Lit
+                    Sobre los Templates
                   </h1>
                 </div>
               </section>
@@ -655,28 +655,28 @@
                       <div class="mx-auto space-y-24 text-lg text-left">
                         <div class="space-y-8">
                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg md:mt-5 md:text-xl">
-                            Comenzar a utilizar LitGirl en un proyecto es realmente sencillo. B&aacute;sicamente, todo se reduce a descomprimir e instalar el directorio root de LitGirl en la raiz de tu proyecto importar el m&oacute;dulo <i>"Lit"</i>, inicializarlo y, dependiendo de lo que se desee hacer, utilizar uno o dos m&eacute;todos de inicializaci&oacute;n. En el escenario m&aacutes simple, estss m&eacute;todos ni siquiera requieren argumentos para funcionar. Se invocan y ellos pueden inferir qu&eacute; tarea deben realizar.
+                            Los <i>Templates</i> son una parte esencial en la din&aacute;mica de desarrollo con LitGirl. A lo largo de las diferentes secciones de este cap&iacute;tulo vamos a profundizar tanto en su estructura como utilizaci&oacute;n.
                           </p>
                           <div>
                             <ul role="list" a class="space-y-3 text-base list-none sm:text-lg md:mt-5 md:text-xl">
                               <li>
-                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#install">
-                                  &#8627; Instalaci&oacute;n
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#what-are">
+                                  &#8627; ¿Qu&eacute; son?
                                 </a>
                               </li>
                               <li>
-                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#structure">
-                                  &#8627; Estructura interna
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#variables">
+                                  &#8627; Llamadas de transpilaci&oacute;n
                                 </a>
                               </li>
                               <li>
-                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#quickstart">
-                                  &#8627; Inicio r&aacute;pido
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#constants">
+                                  &#8627; Constantes de compaginaci&oacute;n
                                 </a>
                               </li>
                               <li>
-                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#use">
-                                  &#8627; Utilizar en templates
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#full-example">
+                                  &#8627; Ejemplo completo
                                 </a>
                               </li>
                               <li>
@@ -688,195 +688,10 @@
                           </div>
                         </div>
 
-                        <div class="space-y-12" id="install">
-                          <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
-                            <a href="https://github.com/LitGirl/litgirl" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
-                              Instalar LitGirl
-                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                  fill="currentColor"
-                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                />
-                              </svg>
-                            </a>
-                          </h2>
-                          <div class="space-y-6">
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Lo primero que necesitar&aacute;s para poder comenzar a utilizar LitGirl es descargar el archivo zip o clonar el repositorio en GitHub desde el enlace que te dejamos a continuaci&oacute;n:
-                            </p>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="https://github.com/LitGirl/litgirl" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
-                                Descargar o clonar LitGirl aqu&iacute;
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Si descargaste el archivo .zip, lo siguiente ser&aacute; descomprimirlo en la ra&iacute;z de tu proyecto. Es decir, dentro de la estructura principal de directorios.En relidad puedes colocarlo donde desees dentro de tu proyecto, sin embargo, recomendamos hacerlo en la ra&iacute;z por un tema de practicidad. Puesto que el routing viene configurado por defecto para rastrear componentes desde esa ubicaci&oacute;n.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Ahora bien, si por cualquier motivo, deseas instalar LitGirl en cualquier otra ubicaci&oacute;n tienes total libertad para hacerlo. Tomando la precauci&oacute;n de reconfigurar la url base al momento de inicializar la aplicaci&oacute;n. De todas formas, esto es algo realmente sencillo como veremos m&aacute;s adelante. A continuaci&oacute, encontrar&aacute;s dos enlaces a diagramas con una representaci&oacute;n elemental de las posibles ubicaciones para el directorio root de LitGirl.
-                            </p>
-                            <div class="space-y-6">
-                                <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                                  <a href="../assets/images/diagrams/Lit-default-location.png" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
-                                    Ampliar ubicaci&oacute;n recomendada
-                                    <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                      <path fill="none" d="M0 0h24v24H0z" />
-                                      <path
-                                        fill="currentColor"
-                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                      />
-                                    </svg>
-                                  </a>
-                                </h3>
-                                <a href="../assets/images/diagrams/Lit-default-location.png" class="inline-flex leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river m-auto" target="_blank">
-                                    <img src="../assets/images/diagrams/Lit-default-location.png" class="max-full" alt="Imagen de la ubicación recomendada" width="600">
-                                </a>
-                            </div>
-                            <div class="space-y-6">
-                                <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                                  <a href="../assets/images/diagrams/Lit-custom-location.png" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
-                                    Ampliar otra ubicaci&oacute;n
-                                    <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                      <path fill="none" d="M0 0h24v24H0z" />
-                                      <path
-                                        fill="currentColor"
-                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                      />
-                                    </svg>
-                                  </a>
-                                </h3>
-                                <a href="../assets/images/diagrams/Lit-custom-location.png" class="inline-flex leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river m-auto" target="_blank">
-                                    <img src="../assets/images/diagrams/Lit-custom-location.png" class="max-full" alt="Imagen de la ubicación recomendada" width="600">
-                                </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="space-y-12" id="structure">
-                          <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
-                            <a href="https://github.com/LitGirl/litgirl" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
-                              Estructura interna
-                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                  fill="currentColor"
-                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                />
-                              </svg>
-                            </a>
-                          </h2>
-                          <div class="space-y-6">
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Antes de ver c&oacute;mo podemos comenzar a utilizar <i>"Lit"</i>, vamos a echar un breve vistazo a su estructura interna y la funci&oacute;n que cumplen cada uno de los distintos elementos que la componen.
-                            </p>
-                            <div class="space-y-6">
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="../assets/images/diagrams/lit-structure.png" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
-                                Ampliar estructura interna
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <a href="../assets/images/diagrams/lit-structure.png" class="inline-flex leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river m-auto p-4" target="_blank">
-                                <img src="../assets/images/diagrams/lit-structure.png" class="max-full rounded-md" alt="Imagen de la ubicación recomendada" width="300">
-                            </a>
-                            </div>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Tal como se indica en el diagrama de estructura que se puede apreciar en el enlace anterior, LitGirl consta de una estructura extremadamente simple que vamos a anlizar a continuaci&oacute;n:
-                            </p>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                Directorio: core
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Este directorio contiene el n&uacute;cleo de toda la aplicaci&oacute;n. No hace falta entrar en mayores detalles sobre el mismo, ya que no recomendamos realizar ninguna acci&oacute;n en su interior. Cualquier cambio en los ficheros all&iacute; ubicados, podr&iacute;a provocar una falla generalizada de LitGirl.
-                            </p>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                Directorio: parts
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Este directorio es donde LitGirl buscar&aacute; los componentes que se compilan e inyectan en los diferentes templates (Ej: header.html, footer.html, etc). En su interior se pueden agregar nuevos subdirectorios para mantener organizadas las diferentes partes a ser incluidas agrup&aacute;ndolas seg&uacute;n los criterios que se consideren convenientes de acuerdo al proyecto que se est&eacute; desarrollando.
-                            </p>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                Directorio: src
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              El directorio "src" est&aacute; destinado a los m&oacute;dulos u objetos JS y los ficheros JSON a ser importados por la aplicaci&oacute;n. Ya sea que contengan datos a ser cargados o componentes que seran inyectados como HTML dentro de los templates.
-                            </p>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                Directorio: resources
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Como habr&aacute;s podido percibir, la instalaci&oacute;n base de LitGirl procura proveer una estructura por defecto para la organizaci&oacute;n por defecto de la aplicaci&oacute;n. El directorio "resources" no tiene una funci&oacute;n predeterminada en la versi&oacute;n actual de LitGirl que es la Alfa 0.0.1. Se provee como una ubicaci&oacute;n propuesta para almacenar aquellos recursos que no forman parte propiamente dicha de la misma. Como por ejemplo, archivos de imagen, hojas de estilos, etc. En caso de utilizar una estructura diferente para el proyecto, o ya tener otra ubicaci&oacute;n destinada a tal fin, puedes eliminarlo sin ning&uacute;n riesgo o dejarlo vac&iacute;o.
-                            </p>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                Root: index.js
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Este fichero ubicado en la ra&iacute;z de LitGirl, es el encargado de exponer "Lit" al exterior y proteger el n&uacute;cleo de la aplicaci&oacute;n. Contiene la importaci&oacute;n de todo lo necesario para que puedas trabajar con LitGirl. Adem&aacute;s de traer incluida la configuraci&oacute;n m&aacute;s elemental para arrancar "Lit".
-                            </p>
-                          </div>
-                        </div>
-                        <div class="space-y-12" id="quickstart">
+                        <div class="space-y-12" id="what-are">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                              Inicio r&aacute;pido
+                              ¿Qu&eacute; son?
                               <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path
@@ -888,101 +703,150 @@
                           </h2>
                           <div class="space-y-6">
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                Una vez instalado el directorio LitGirl en nuestro proyecto, lo siguiente es inicializar el m&oacute;dulo principal. En esta gu&iacute;a de inicio r&aacute;pido los ejemplos de c&oacute;digo propuestos, se centran en cubrir los aspectos m&aacute;s b&aacute;sicos necesarios para poder utilizar <i>"Lit"</i>.
+                              Para resumirlo y no entrar en definiciones confusas, los <i>Templates</i> son ficheros HTML normales que dentro de su contenido incluyen variables o instrucciones <i>Dynamo</i> que el compilador de <i>Lit</i> se encargar&aacute; de interpretar y ejecutar.
                             </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                <strong class="text-periblue">* Si deseas profundizar sobre el uso de los diferentes m&eacute;todos que provee LitGirl, te recomendamos visitar la secci&oacute;n de la documentaci&oacute;n referida a los</strong> <a href="./metodos.html" class="underline inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                    M&eacute;todos
-                                    <svg class="w-4 h-4 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                      <path fill="none" d="M0 0h24v24H0z" />
-                                      <path
-                                        fill="currentColor"
-                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                      />
-                                    </svg>
-                                </a>.
-                            </p>
-                          </div>
-                          <div class="space-y-6">
-                              <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                                <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                  Inicializaci&oacute;n b&aacute;sica
-                                  <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                      fill="currentColor"
-                                      d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                    />
-                                  </svg>
-                                </a>
-                              </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                A continuaci&oacute;n representamos el aspecto que tiene el fichero <i>index.js</i> que se encuentra en la ra&iacute;z de LitGirl, el cual proporciona acceso a sus m&eacute;todos.
-                            </p>
+                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
+                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                Veamos un ejemplo
+                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path
+                                    fill="currentColor"
+                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                  />
+                                </svg>
+                              </a>
+                            </h3>
                             <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">#index.js</span></div><br><div class="line"><span class="syntax--source syntax--js"><span class="syntax--keyword syntax--control">import</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span><span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span> <span class="syntax--keyword syntax--control">from</span> <span class="syntax--string syntax--quoted">'./core/start.js'</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> lit <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--keyword syntax--operator syntax--new">new</span> <span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js">lit<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">setDataLit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js">lit<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">init</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span><span class="trailing-whitespace">   </span></span></div></pre></div>
+                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">UTF-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">name</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">viewport</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">width=device-width, initial-scale=1.0</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">http-equiv</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">X-UA-Compatible</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">ie=edge</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span>{=dataLit.titles.2}<span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=meta-tags}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">link</span> <span class="syntax--entity syntax--other syntax--attribute-name">rel</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">stylesheet</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">href</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.urls.css}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">media</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">all</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">nonce</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=test-load}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">div</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.classList}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">       </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Este contenido HTML se mantiene inalterado --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=test-footer}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
                                 <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    Vamos a analizar un poco m&aacute;s detenidamente el fragmento de c&oacute;digo anterior, para entender mejor que hace cada instrucci&oacute;n.
+                                  Como puedes apreciar en el ejemplo de c&oacute;digo anterior, este es el aspecto que puede tener un <i>Template</i> con <i>Lit</i>. A continuaci&oacute;n vamos a analizar de manera m&aacute;s pormenorizada las distintas expresiones o variables que pueden observarse en el mismo y su funci&oacute;n.
                                 </p>
                             </div>
-                            <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js"><span class="syntax--keyword syntax--control">import</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span><span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span> <span class="syntax--keyword syntax--control">from</span> <span class="syntax--string syntax--quoted">'./core/start.js'</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span><span class="trailing-whitespace">   </span></span></div></pre></div>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    Esta primera l&iacute;nea se encarga de importar el m&oacute;dulo base de LitGirl para tenerlo disponible en nuestro proyecto all&iacute; donde sea necesario.
-                                </p>
-                            </div>
-                            <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> lit <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--keyword syntax--operator syntax--new">new</span> <span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    En esta segunda l&iacute;nea, instanciamos Lit (el motor de LitGirl) y lo almacenamos en una constante llamada <i>lit</i>. Como ya mencionamos, en esta gu&ia de inicio r&aacute;pido, no estamos pasando ninguna configuraci&oacute;n como par&aacute;metro, y dejamos que se utilice los valores por default preddefinidos en la aplicaci&oacute;n. Sin embargo te adelantamos que existe una amplia serie de argumentos que se pueden pasar como valores de incializaci&oacute;n.
-                                </p>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    <strong class="text-periblue">En la secci&oacute;n de la documentaci&oacute;n referida a los</strong> <a href="./metodos.html" class="underline inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                        M&eacute;todos
-                                        <svg class="w-4 h-4 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                          <path fill="none" d="M0 0h24v24H0z" />
-                                          <path
-                                            fill="currentColor"
-                                            d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                          />
-                                        </svg>
-                                    </a>, puedes aprender m&aacute;s sobre los objetos de configuraci&oacute;n de los mismos.
-                                </p>
-                            </div>
-                            <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">lit<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">setDataLit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    El m&eacute;todo <i>setDataLit</i> crea un objeto de datos virtual. Su uso es totalmente opcional. Sin embargo hemos considerado oportuno agregarlo, ya que ofrece una buena opci&oacute;n para trabajar con datos tanto din&aacute;micos como est&aacute;ticos dentro de la aplicaci&oacute;n con mayor seguridad.
-                                </p>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    ¿De d&oacute;nde obtiene los datos? En el caso concreto de este ejemplo donde no recibe ning&uacute;n par&aacute;metro, <i>setDataLit</i> viene configurado por default para importar el set de datos que debe utilizar de un archivo de datos llamado <i>dataLit.js</i> que debe ubicarse en el directorio <i>src</i> de LitGirl. Cabe agregar que tambi&eacute;n replicar&aacute; estos datos en la base de datos din&aacute;mica interna de <i>LitGirl</i> a menos que se haya establecido otro objeto data distinto durante la inicializaci&oa;n de <i>Lit</i>, o se sobreescriba durante el ciclo de vida de la instancia actual.
-                                </p>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    <strong class="text-periblue">En la secci&oacute;n de la documentaci&oacute;n referida a los</strong> <a href="./metodos.html" class="underline inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                        M&eacute;todos
-                                        <svg class="w-4 h-4 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                          <path fill="none" d="M0 0h24v24H0z" />
-                                          <path
-                                            fill="currentColor"
-                                            d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                          />
-                                        </svg>
-                                    </a> puedes obtener mayor informaci&oacute;n.
-                                </p>
-                            </div>
-                            <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">lit<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">init</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    Como su nombre lo indica, <i>init</i> es propiamente dicho el m&eacute;todo de inicio por defecto de Lit. Es el encargado de realizar el primer parseado y compilaci&oacute;n de los templates con las instrucciones del pseudo-lenguaje Dynamo embebidas, as&iacute; como de transpilar las variables existentes en estos templates. Es un m&eacute;todo bastante potente, que se ejcuta una sola vez con la carga del sitio. Si el proyecto incluye varias cargas din&aacute;micas a lo largo de su ciclo de vida, deberemos recurrir a alg&uacute;n otro m&eacute;todo auxiliar. En casos menos exigentes, casi puede decirse que con este m&eacute;todo se cubren todos los aspectos b&aacute;sicos de renderizado de los templates.
-                                </p>
+                            <div class="space-y-4">
+                                <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                  <div class="flex">
+                                    <div class="flex-shrink-0">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        fill="none"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                      >
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M12 9v2m0 4v.01"></path>
+                                        <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                      </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                      <h3 class="text-pumpikin text-base font-medium">Importante:</h3>
+                                      <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                        <p>Los ejemplos de sintaxis que estudiaremos corresponden a la versi&oacute;n <i>Alfa 0.0.1</i>. Es de esperar cambios sensibles en el futuro cercano.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                             </div>
                           </div>
                         </div>
 
-                        <div class="space-y-12" id="use">
+                        <div class="space-y-12" id="variables">
+                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                              <a href="https://github.com/LitGirl/litgirl" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
+                                Variables de transpilaci&oacute;n
+                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path
+                                    fill="currentColor"
+                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                  />
+                                </svg>
+                              </a>
+                            </h2>
+                            <div class="space-y-6">
+                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span>{=dataLit.titles.2}<span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                  Las <i>variables de transpilaci&oacute;n</i> son parte esencial de los <i>Templates</i>. Representan la unidad m&iacute;nima de inyecci&oacute;n de datos admitida por <i>Lit</i>.
+                                </p>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
+                                  <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                    Partes de las variables
+                                    <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                      <path fill="none" d="M0 0h24v24H0z" />
+                                      <path
+                                        fill="currentColor"
+                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                      />
+                                    </svg>
+                                  </a>
+                                </h3>
+                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                    1.- <strong><i class="text-periblue">{=</i></strong>&nbsp; Apertura del transpilador.
+                                    <br>
+                                    <br>
+                                    2.- <strong><i class="text-periblue">dataLit.titles.2</i></strong>&nbsp; De d&oacute;nde obtiene los datos a asignar. Por ejemplo, en este caso concreto, el compilador buscar&aacute; el valor en el almac&eacute;n de datos abstractos <i>dataLit</i> (el cual creamos con <i>setDataLit()</i> como ya vimos en la <a href="./starter.html#quickstart" class="underline text-oyster hover:text-comet dark:text-manatee">gu&iacute;a de inicio r&aacute;pido</a>), y a continuaci&oacute,n tomar&aacute; la tercera posici&oacute;n de la propiedad <i>titles</i>, que evidentemente es un array.
+                                    <br>
+                                    <br>
+                                    3.- <strong><i class="text-periblue">}</i></strong>&nbsp; Cierre de la instrucci&oacute;n.
+                                </p>
+                            </div>
+                            <div class="space-y-6">
+                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                  Aqu&iacute; podemos ver otros dos ejemplos. En el primero se asigna una url a la etiqueta &lt;link&gt;, para enlazar un archivo css. En el segundo ejemplo, se asigna una clase a un elemento HTML. Cabe se&ntilde;alar que estas caracter&iacute;sticas se pueden potenciar utilizando los condicionales de <i>Dynamo</i>. Pero esto lo veremos m&aacute;s adelante.
+                                </p>
+                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">link</span> <span class="syntax--entity syntax--other syntax--attribute-name">rel</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">stylesheet</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">href</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.urls.css}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">media</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">all</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">nonce</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">div</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.classList}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">       </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Este contenido HTML se mantiene inalterado --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                            </div>
+                            <div class="space-y-4">
+                              <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                <div class="flex">
+                                  <div class="flex-shrink-0">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      class="icon icon-tabler icon-tabler-info-circle text-oyster"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="2"
+                                      stroke="currentColor"
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    >
+                                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                      <circle cx="12" cy="12" r="9"></circle>
+                                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                      <polyline points="11 12 12 12 12 16 13 16"></polyline>
+                                    </svg>
+                                  </div>
+                                  <div class="ml-3">
+                                    <h3 class="text-oyster text-base font-medium">Info</h3>
+                                    <div class="text-santa mt-2 text-sm">
+                                      <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">En los ejemplos anteriores, la variables toman su valor de propiedades contenidas en el objeto <i>dataLit</i>. Sin embargo, estos valores pueden provenir de cualquier otro objeto o variable que est&eacute; dentro del alcance de <i>Lit</i>. Mira el siguiente ejemplo para entender mejor a qu&eacute; nos referimos.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="space-y-6">
+                              <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">text/javascript</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">            </span><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> greets <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--string syntax--quoted">'Hola Mundo'</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--source syntax--js"><span class="leading-whitespace">        </span></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">h1</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">txt-center red m-t-10 m-b-10 bold</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">            </span>{=greets}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">h1</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                Como puedes ver en este otro ejemplo, el valor a transpilar se obtiene directamente de una constante que se ha declarado en el propio documento. Con lo cual sustituir&aacute; <i>{=greets}</i> pot la frase <i>Hola Mundo</i>. De la misma manera funcionar&iacute;a si esta constante, o cualquier otro tipo de dato que contuviera un valor, estuviera dentro de otro archivo JavaScript incluido en el documento.
+                              </p>
+                          </div>
+                        </div>
+                        <div class="space-y-12" id="constants">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
-                            <a href="#" class="inline-flex items-center gap-4">
-                              Utilizar Lit en templates
+                            <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                              Constantes de compaginaci&oacute;n
                               <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path
@@ -994,12 +858,12 @@
                           </h2>
                           <div class="space-y-6">
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Para finalizar esta <i>G&iacute;a de Inicio R&aacute;pido</i> vamos a dedicar un apartado especial a la forma de importar el m&oacute;dulo Lit dentro de los templates del sitio. Si bien forma parte de la gu&iacute;a, lo incluimos como un apendice final, ya que la importaci&oacute;n tiene alguna particularidad a tener en cuenta.
+                              Las <i>Constantes de compaginaci&oacute;n</i> son expresiones Dynamo en la estructura de las p&aacute;ginas del sitio, que indican a Lit fragmentos HTML que debe buscar, compilar e inyectar en el template. Normalmente dichos fragmentos se encontraran en el directorio <i>parts</i> de LitGirl. Aunque, como ya explicamos en la <a href="./starter.html#quickstart" class="underline text-oyster hover:text-comet dark:text-manatee">gu&iacute;a de inicio r&aacute;pido</a>, esto depender&aacute; de si se ha alterado o no la configuraci&oacute;n por defecto de Lit al momento de inicializar la aplicaci&oacute;n.
                             </p>
                             <div class="space-y-6">
                                 <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                                   <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                    ¿D&oacute;nde declarar la importaci&oacute;n?
+                                    Aqu&iacute; algunos ejemplos:
                                     <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                       <path fill="none" d="M0 0h24v24H0z" />
                                       <path
@@ -1010,18 +874,44 @@
                                   </a>
                                 </h3>
                                 <div class="space-y-6">
-                                    <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Cabeceras del sitio --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--comment syntax--block syntax--html">&lt;!-- Cuerpo de la página --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                                    <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">UTF-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">name</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">viewport</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">width=device-width, initial-scale=1.0</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">http-equiv</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">X-UA-Compatible</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">ie=edge</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=meta-tags}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=https://domain/path/test-load.html}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=includes/test-footer}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                                </div>
+                                <div class="space-y-6">
+                                    <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
+                                      <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                        Partes de las constantes
+                                        <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                          <path fill="none" d="M0 0h24v24H0z" />
+                                          <path
+                                            fill="currentColor"
+                                            d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                          />
+                                        </svg>
+                                      </a>
+                                    </h3>
                                     <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                      Como podemos apreciar en el ejmplo anterior hay dos cosas que debemos tener presentes al momento de importar Lit en nuestros templates.
+                                        1.- <strong><i class="text-periblue">{{=</i></strong>&nbsp; Declaraci&oacute;n de apertura.
+                                        <br>
+                                        <br>
+                                        2.- <strong><i class="text-periblue">meta-tags</i></strong>&nbsp; En la primera constante simplemente se asigna un nombre de un archivo HTML a ser compilado e insertado dentro del documento desde el que se solicita. Como puedes observar, no es estrictamente obligatorio indicarle la extensi&oacute;n del archivo, es suficiente con el nombre. Sin embargo, recomendamos, al menos de momento, agregar la extensi&oacute;n tal que para este caso quedar&iacute;a as&iacute;: <strong><i class="text-periblue">meta-tags.html</i></strong>
+                                        <br>
+                                        <br>
+                                        3.- <strong><i class="text-periblue">https://domain/path/test-load.html</i></strong>&nbsp; Este tipo de declaraci&oacute;n se utiliza principalmente cuando se necesita cargar un componente o fragmento espec&iacute;fico desde una url distinta a la urlBase con la que se configur&oacute; LitGirl al inicializarse. Tambi&eacute;n puede utilizarse este tipo de asignaci&oacute;n para incluir componentes o fragmentos desde un sitio externo <i class="text-periblue">siempre que las pol&iacute;ticas de CORS lo permitan</i>.
+                                        <br>
+                                        <br>
+                                        4.- <strong><i class="text-periblue">includes/test-footer</i></strong>&nbsp; En este ejemplo, asumimos el supuesto de que se ha creado un directorio <i>includes</i> dentro de <i>partials</i>, o el directorio base para los componentes y fragmentos que se haya configurado al inicializar LitGirl. La estructura puede tener la profundidad de directorios que necesitemos para nuestro proyecto.
+                                        <br>
+                                        <br>
+                                        5.- <strong><i class="text-periblue">}}</i></strong>&nbsp; Cierre de la declaraci&oacute;n.
                                     </p>
                                 </div>
                                 <div class="space-y-4">
-                                    <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
                                       <div class="flex">
                                         <div class="flex-shrink-0">
                                           <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                            class="icon icon-tabler text-psycho icon-tabler-alert-octagon text-brink"
                                             width="20"
                                             height="20"
                                             viewBox="0 0 24 24"
@@ -1037,50 +927,97 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-pumpikin text-base font-medium">Importar como m&oacute;dulo</h3>
+                                          <h3 class="text-brink text-base font-medium">NO agregar la barra inicial ( / )</h3>
                                           <div class="text-santa mt-2 text-sm">
-                                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Lit como tal es un m&oacute;dulo, por lo tanto se debe importar utilizando el flag <i>type="module"</i> dentro de la etiqueta <i>script</i>.</p>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-4">
-                                    <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
-                                      <div class="flex">
-                                        <div class="flex-shrink-0">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 24 24"
-                                            stroke-width="1.5"
-                                            stroke="currentColor"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          >
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                            <path d="M12 9v2m0 4v.01"></path>
-                                            <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
-                                          </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                          <h3 class="text-pumpikin text-base font-medium">Importar al inicio del documento</h3>
-                                          <div class="text-santa mt-2 text-sm">
-                                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Lit debe ser cargado antes que cualquier otro componente del documento. Es decir, lo m&aacute;s arriba posible en la jerarqu&iacute;a. Incluso, puede aparecer antes de la etiqueta de apertura &lt;html&gt;. Cuando el template sea renderizado por el m&eacute;todo <i>init</i>, ¡ser&aacute; reubicado "m&aacute;gicamente"!</p>
+                                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Cuando se indique una ruta a una <i>constante de compaginaci&oacute;n</i> que se encuentre en la url base con la que se inicializ&oacute; LitGirl, se debe comenzar directamente por el nombre del archivo a compaginar. O en su defecto, el nombre del primer directorio d&oacute;nde debe comenzar a buscarlo. La '/' inicial es innecesaria para el compilador de Lit y hemos optado por omitirla. Por ejemplo: <i class="text-periblue">{{=/meta-tags}}</i> o <i class="text-periblue">{{=/includes/test-footer}}</i> provocaran un error de compilaci&oacute;n.</p>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="space-y-12" id="full-example">
+                          <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                            <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                              Ejemplo completo
+                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                  fill="currentColor"
+                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                />
+                              </svg>
+                            </a>
+                          </h2>
+                          <div class="space-y-6">
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-periblue dark:text-periblue">Existen much&iacute;simos temas referentes a los templates que no hemos abordado en esta introducci&oacute;n. Como son las importaciones, las variables globales y las variables de instancia, entre un largo etc.</strong>
+                                A continuaci&oacute;n, tienes una visi&oacute;n de conjunto de todo el c&oacute;digo que hemos utilizado en los diferentes apartados de esta secci&oacute;n. Pensamos que puede resultarte &uacute;til para comprender mejor el funcionamiento de las <i>Variables de transpilaci&oacute;n </i> y <i>Constantes de compaginaci&oacute;n</i> de Dynamo que LitGirl debe compilar.
+                            </p>
+                            <div class="space-y-6">
+                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">UTF-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">name</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">viewport</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">width=device-width, initial-scale=1.0</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">http-equiv</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">X-UA-Compatible</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">ie=edge</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span>{=dataLit.titles.2}<span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=meta-tags}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">link</span> <span class="syntax--entity syntax--other syntax--attribute-name">rel</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">stylesheet</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">href</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.urls.css}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">media</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">all</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">nonce</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=https://domain/path/test-load.html}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">div</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.classList}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Este contenido HTML se mantiene inalterado --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=includes/test-footer}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                            </div>
+                          </div>
+                          <div class="space-y-4">
+                              <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                <div class="flex">
+                                  <div class="flex-shrink-0">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    >
+                                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                      <circle cx="12" cy="12" r="9"></circle>
+                                      <path d="M9 12l2 2l4 -4"></path>
+                                    </svg>
+                                  </div>
+                                  <div class="ml-3">
+                                    <h3 class="text-herbs text-base font-medium">Protecci&oacute;n contra Harvesters y Scrapers</h3>
+                                    <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                      <p>Como ventaja adicional, y muy relevante por cierto, las <i>Variables de transpilaci&oacute;n</i> al igual que las <i>Constantes de compaginaci&oacute;n</i> ofrecen una capa extra de seguridad frente a Cosechadoras(Harvesters) y los Raspadores web(Scrapers).</p>
+                                      <p>El uso corecto de la encapsulaci&oacute;n dificulta que programas maliciosos puedan obtener datos sensibles, tales como n&uacute;meros de tel&eacute;fono, direcciones de email o la estructura real de las p&aacute;ginas, con un simple escaneo del sitio. Lo que, normalmente para lograrlo, conlleva tener conocimientos algo avanzados de programaci&oacute;n o contratar servicios externos tales como Cloudflare, por nombrar uno de los m&aacute;s populares.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="space-y-12" id="quickstart">
+                          <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                            <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                              Bastante sencillo, ¿no?
+                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                  fill="currentColor"
+                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                />
+                              </svg>
+                            </a>
+                          </h2>
+                          <div class="space-y-6">
+                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                Como habr&aacute;s podido notar, si ya conoces algunos de los motores de plantillas m&aacute;s populares, la sintaxis utilizada en los templates de <i>Lit</i> tiene algunas similitudes con la utilizada en varios de ellos. La principal diferencia con el resto, es la potencia, el alcance y la versatilidad que se les a incorporado a las mismas.
                             </p>
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Para poder aprender con mayor profundidad la forma en que LitGirl maneja los templates y sus diferentes caracter&iacute;sticas, te invitamos a leer la <a href="./templates.html" class="underline text-oyster hover:text-comet dark:text-manatee">documentaci&oacute;n referida a los <i>Templates</i></a>.
+                                <strong class="text-periblue">* Sin embargo, donde realmente LitGirl alcanza su mayor potencia, es con el uso de las estructuras de control incorporadas en Dynamo. Estos son bastante poderosos y tambi&eacute;n pueden utilizarse para manejos m&aacute;s complejos de las <i>Variables y Constantes</i> que vimos en este cap&iacute;tulo. Pero esto lo tratamos en una secci&oacute;n espec&iacute;fica sobre: </strong> <a href="./estructuras-de-control.html" class="underline inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                    Condicionales, bucles y rangos
+                                    <svg class="w-4 h-4 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                      <path fill="none" d="M0 0h24v24H0z" />
+                                      <path
+                                        fill="currentColor"
+                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                      />
+                                    </svg>
+                                </a>.
                             </p>
                           </div>
                         </div>
@@ -1251,27 +1188,28 @@
                 <div class="w-full mx-auto">
                   <div class="lg:grid-cols-2 lg:divide-x dark:divide-x-gun dark:divide-gun grid grid-cols-1">
                     <div>
-                      <a href="../index.html">
+                      <a href="./starter.html">
                         <div class="bg-ghost dark:bg-cinder dark:hover:bg-tuna hover:bg-metal sm:px-6 lg:px-8 group px-4 pt-8 pb-16">
                           <span class="text-comet dark:text-manatee dark:hover:text-oyster text-sm font-normal"> Anterior </span>
                           <p
                             class="lg:text-base text-comet dark:text-manatee sm:text-xl dark:group-hover:text-periblue darkgroup-hover:text-periblue group-hover:text-pearl text-xs font-light"
                           >
-                            Home
+                            <span>Documentaci&oacute;n:</span>
+                            <span>Empezar</span>
                           </p>
                         </div>
                       </a>
                     </div>
 
                     <div>
-                      <a href="./templates.html" class="">
+                      <a href="./estructuras-de-control.html" class="">
                         <div class="md:mt-0 bg-ghost dark:bg-cinder dark:hover:bg-tuna hover:bg-metal sm:px-6 lg:px-8 group px-4 pt-8 pb-16 w-full text-right">
                           <span class="text-comet dark:text-manatee text-sm font-normal"> Siguiente </span>
                           <p
                             class="lg:text-base text-comet dark:text-manatee sm:text-xl dark:group-hover:text-periblue darkgroup-hover:text-periblue group-hover:text-pearl space-x-2 text-xs font-light"
                           >
                             <span>Documentaci&oacute;n:</span>
-                            <span>Templates</span>
+                            <span>Estructuras de control</span>
                           </p>
                         </div>
                       </a>
