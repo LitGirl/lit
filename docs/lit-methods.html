@@ -115,7 +115,7 @@
                           </li>
                           <li>
                             <a
-                              href="./estructuras-de-control.html"
+                              href="./control-structures.html"
                               class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                             >
                               Estructuras de control
@@ -127,6 +127,14 @@
                               class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                             >
                               M&eacute;todos de Lit
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="./dynamo-operators.html"
+                              class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
+                            >
+                              Operadores de Dynamo
                             </a>
                           </li>
                           <li>
@@ -418,7 +426,7 @@
                               </li>
                               <li>
                                 <a
-                                  href="./estructuras-de-control.html"
+                                  href="./control-structures.html"
                                   class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                                 >
                                   Estructuras de control
@@ -430,6 +438,14 @@
                                   class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                                 >
                                   M&eacute;todos de Lit
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="./dynamo-operators.html"
+                                  class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
+                                >
+                                  Operadores de Dynamo
                                 </a>
                               </li>
                               <li>
@@ -684,7 +700,7 @@
                                 <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#helpers">
                                   &#8627; M&eacute;todos Auxiliares
                                 </a>
-                              </li>                              
+                              </li>
                               <li>
                                 <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#considerations">
                                   &#8627; Consideraciones finales
@@ -1442,9 +1458,13 @@
                               </p>
                               <div class="space-y-6">
                                   <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">#your<span class="syntax--keyword syntax--operator syntax--js">-</span>start<span class="syntax--keyword syntax--operator syntax--js">-</span>file<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--variable syntax--other syntax--object syntax--property syntax--unquoted">js</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ Invocando el método getComponent con su</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ parámetro obligatorio y el Objeto de configuración,</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ para procesarlo antes de devolverlo.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--constant syntax--other">LIT</span><span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">getComponent</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--string syntax--quoted">'target'</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span> <span class="syntax--constant syntax--other">PROCESS_CONF</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
-                                  <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                     En cuanto al <i>Objeto de configuraci&oacute;n</i> solamente necesitas saber que es exactamente igual en su conformaci&oacute;n al que recibe el <i>M&eacute;todo Compile</i>. Si lo deseas, puedes revisarlo nuevamente desde este enlace: <a href="#compile" class="underline text-oyster hover:text-comet dark:text-manatee"><i class="text-periblue">Objeto de configuraci&oacute;n del M&eacute;todo Compile</i></a>.
+                                  <p id="cast" class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                     En cuanto al <i>Objeto de configuraci&oacute;n</i> solamente necesitas saber que es igual en su conformaci&oacute;n al que recibe el <i>M&eacute;todo Compile</i> con la &uacute;nica diferencia de que la propiedad <i class="text-periblue">'cast' debe recibir como valor expl&iacute;cito: true</i>. Si recibe cualquier otro valor, devolver&aacute; el componente sin procesar. Si lo deseas, puedes revisarlo nuevamente desde este enlace: <a href="#compile" class="underline text-oyster hover:text-comet dark:text-manatee"><i class="text-periblue">Objeto de configuraci&oacute;n del M&eacute;todo Compile</i></a>.
                                   </p>
+                                  <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                     Veamos esto con un ejemplo sencillo para entenderlo mejor:
+                                  </p>
+                                  <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">#your<span class="syntax--keyword syntax--operator syntax--js">-</span>start<span class="syntax--keyword syntax--operator syntax--js">-</span>file<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--variable syntax--other syntax--object syntax--property syntax--unquoted">js</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ Ejemplo del Objeto de configuración con la propiedad 'cast'</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ seteada a true, para que el componente sea procesado antes de ser entregado.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> <span class="syntax--constant syntax--other">PROCESS_CONF</span> <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">                        </span><span class="syntax--variable syntax--other syntax--object syntax--property">cast</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--constant syntax--language syntax--boolean syntax--true">true</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
                               </div>
                           </div>
                           <div class="space-y-6">
@@ -1481,7 +1501,7 @@
                                       2.- <strong><i class="text-periblue">'name_module'</i></strong>&nbsp; Puede ser tanto el nombre de un solo m&oacute;dulo a ser importado as&iacute; como un <i>Array de nombres</i>. Siempre que todos los m&oacute;dulos a importar se encuentren dentro del mismo archivo, funcionar&aacute; sin problemas. <strong><i class="text-periblue">Es obligatorio pasarlo en el caso de enviar el &uacute;ltimo par&aacute;metro. Si se env&iacute;a el Objeto de configuraci&oacute;n, pero solamente se desea que se importe una exportaci&oacute;n por default, 'name_module' debe pasarse como null</i></strong>. En el caso de que solamente se env&iacute;e el 'target' como argumento, puede omitirse y <i>getModule</i> asumir&aacute; que debe importar solamente el m&oacute;dulo exportado por default.
                                       <br>
                                       <br>
-                                      3.- <strong><i class="text-periblue">Objeto de configuraci&oacute;n</i></strong>&nbsp; Es exactamente igual en su conformaci&oacute;n al que recibe el <i>M&eacute;todo Compile</i>. Si lo deseas, puedes revisarlo nuevamente desde este enlace: <a href="#compile" class="underline text-oyster hover:text-comet dark:text-manatee">Objeto de configuraci&oacute;n del M&eacute;todo Compile</a>. <i class="text-periblue">* NO es obligatorio, pero si se omite o se pasa como null, getModule devolver&aacute; el/los m&oacute;dulo/s sin procesar</i>.
+                                      3.- <strong><i class="text-periblue">Objeto de configuraci&oacute;n</i></strong>&nbsp; Sigue las mismas reglas que en el <i>M&eacute;todo getComponent</i>. Si lo deseas, puedes revisarlo nuevamente desde este enlace: <a href="#cast" class="underline text-oyster hover:text-comet dark:text-manatee">Propiedad cast en el M&eacute;todo getComponent</a>. <i class="text-periblue">* NO es obligatorio, pero si se omite o se pasa como null, getModule devolver&aacute; el/los m&oacute;dulo/s sin procesar</i>.
                                   </p>
                               </div>
                               <div class="space-y-6">
@@ -1801,14 +1821,14 @@
                     </div>
 
                     <div>
-                      <a href="./lit-methods.html" class="">
+                      <a href="./dynamo-operators.html" class="">
                         <div class="md:mt-0 bg-ghost dark:bg-cinder dark:hover:bg-tuna hover:bg-metal sm:px-6 lg:px-8 group px-4 pt-8 pb-16 w-full text-right">
                           <span class="text-comet dark:text-manatee text-sm font-normal"> Siguiente </span>
                           <p
                             class="lg:text-base text-comet dark:text-manatee sm:text-xl dark:group-hover:text-periblue darkgroup-hover:text-periblue group-hover:text-pearl space-x-2 text-xs font-light"
                           >
                             <span>Documentaci&oacute;n:</span>
-                            <span>M&eacute;todos de Lit</span>
+                            <span>Operadores de Dynamo</span>
                           </p>
                         </div>
                       </a>

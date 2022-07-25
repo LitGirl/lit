@@ -107,7 +107,7 @@
                           </li>
                           <li>
                             <a
-                              href="javascript:void(0);"
+                              href="./templates.html"
                               class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                             >
                               Templates
@@ -131,7 +131,7 @@
                           </li>
                           <li>
                             <a
-                              href="./dynamo-operators.html"
+                              href="javascript:void(0);"
                               class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                             >
                               Operadores de Dynamo
@@ -418,7 +418,7 @@
                               </li>
                               <li>
                                 <a
-                                  href="javascript:void(0);"
+                                  href="./templates.html"
                                   class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                                 >
                                   Templates
@@ -442,7 +442,7 @@
                               </li>
                               <li>
                                 <a
-                                  href="./dynamo-operators.html"
+                                  href="javascript:void(0);"
                                   class="text-oyster dark:text-manatee dark:hover:text-periblue hover:text-river group dark:hover:bg-tuna hover:bg-white focus:border-periblue flex items-center p-2 pl-3 text-base font-light border-l-2 border-transparent"
                                 >
                                   Operadores de Dynamo
@@ -667,7 +667,7 @@
                                 href="javascript:void(0);"
                                 class="text-comet dark:text-manatee hover:text-oyster dark:hover:text-oyster ml-4 text-sm font-medium"
                                 aria-current="page"
-                                >Templates</a
+                                >Operadores de Dynamo</a
                               >
                             </div>
                           </li>
@@ -675,7 +675,7 @@
                       </nav>
                     </div>
                   <h1 data-animate="title" class="py-10 mx-auto text-4xl font-light leading-none tracking-tighter text-comet dark:text-manatee lg:text-5xl">
-                    Sobre los Templates
+                    Operadores de Dynamo
                   </h1>
                 </div>
               </section>
@@ -687,23 +687,28 @@
                       <div class="mx-auto space-y-24 text-lg text-left">
                         <div class="space-y-8">
                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg md:mt-5 md:text-xl">
-                            Los <i>Templates</i> son una parte esencial en la din&aacute;mica de desarrollo con LitGirl. A lo largo de las diferentes secciones de este cap&iacute;tulo vamos a profundizar tanto en su estructura como utilizaci&oacute;n.
+                            Los <i>Operadores</i> son una parte esencial en cualquier lenguaje o pseudo-lenguaje orientado a la programaci&oacute;n. A efectos pr&aacute;cticos, y simplificando bastante, podemos dividirlos en cuatro grupos: <i class="text-periblue">L&oacute;gicos, de Comparaci&oacute;n, de Asignaci&oacute;n y Matem&aacute;ticos</i>.
                           </p>
                           <div>
                             <ul role="list" a class="space-y-3 text-base list-none sm:text-lg md:mt-5 md:text-xl">
                               <li>
-                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#what-are">
-                                  &#8627; ¿Qu&eacute; son?
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#what-do">
+                                  &#8627; ¿Qu&eacute; funci&oacute;n cumplen?
                                 </a>
                               </li>
                               <li>
-                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#variables">
-                                  &#8627; Llamadas de transpilaci&oacute;n
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#logic-operators">
+                                  &#8627; Operadores L&oacute;gicos
                                 </a>
                               </li>
                               <li>
-                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#constants">
-                                  &#8627; Constantes de compaginaci&oacute;n
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#comparation-operators">
+                                  &#8627; Operadores de Comparaci&oacute;n
+                                </a>
+                              </li>
+                              <li>
+                                <a class="font-light text-waterloo dark:text-santa hover:text-oyster dark:hover:text-oyster" href="#asignation-operators">
+                                  &#8627; Operadores de Asignaci&oacute;n
                                 </a>
                               </li>
                               <li>
@@ -720,10 +725,10 @@
                           </div>
                         </div>
 
-                        <div class="space-y-12" id="what-are">
+                        <div class="space-y-12" id="what-do">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                              ¿Qu&eacute; son?
+                              ¿Qu&eacute; funci&oacute;n cumplen?
                               <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path
@@ -735,51 +740,116 @@
                           </h2>
                           <div class="space-y-6">
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Para resumirlo y no entrar en definiciones confusas, los <i>Templates</i> son ficheros HTML normales que dentro de su contenido incluyen variables o instrucciones <i>Dynamo</i> que el compilador de <i>Lit</i> se encargar&aacute; de interpretar y ejecutar.
+                              Para resumirlo y no entrar en definiciones confusas, los <i>Operadores</i> posibilitan que el lenguaje, en este caso <i>Dynamo</i> sea capaz de realizar operaciones con valores de entrada de distinto tipo y en distintos contextos dentro de la l&oacute;gica de un programa.
                             </p>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                Veamos un ejemplo
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">UTF-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">name</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">viewport</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">width=device-width, initial-scale=1.0</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">http-equiv</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">X-UA-Compatible</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">ie=edge</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span>{=dataLit.titles.2}<span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=meta-tags}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">link</span> <span class="syntax--entity syntax--other syntax--attribute-name">rel</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">stylesheet</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">href</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.urls.css}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">media</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">all</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">nonce</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=test-load}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">div</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.classList}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">       </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Este contenido HTML se mantiene inalterado --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=test-footer}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                  Como puedes apreciar en el ejemplo de c&oacute;digo anterior, este es el aspecto que puede tener un <i>Template</i> con <i>Lit</i>. A continuaci&oacute;n vamos a analizar de manera m&aacute;s pormenorizada las distintas expresiones o variables que pueden observarse en el mismo y su funci&oacute;n.
-                                </p>
+                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                              A efectos de unificar conceptos, a lo largo de este cap&iacute;tulo utilizaremos diferentes colores al momento de referirnos a cada operador. Cada color indica el grado de integraci&oacute;n con el que cuenta actualmente cada operador en Dynamo, como puede verse debajo:
+                            </p>
+                            <div class="flex-grow space-y-4">
+                              <div class="flex flex-wrap items-center gap-6">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-herbs text-base font-medium bg-pearl border border-pearl text-white">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      &nbsp;
+                                      Integraci&oacute;n &oacute;ptima
+                                  </div>
+                                </span>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-pumpikin text-base font-medium bg-pearl border border-pearl text-white">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          >
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M12 9v2m0 4v.01"></path>
+                                            <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                          </svg>
+                                        </div>
+                                      &nbsp;
+                                      Integraci&oacute;n parcial
+                                  </div>
+                                </span>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-brink text-base font-medium bg-pearl border border-pearl text-white">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler text-psycho icon-tabler-alert-octagon text-brink"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          >
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path
+                                              d="M8.7 3h6.6c.3 0 .5 .1 .7 .3l4.7 4.7c.2 .2 .3 .4 .3 .7v6.6c0 .3 -.1 .5 -.3 .7l-4.7 4.7c-.2 .2 -.4 .3 -.7 .3h-6.6c-.3 0 -.5 -.1 -.7 -.3l-4.7 -4.7c-.2 -.2 -.3 -.4 -.3 -.7v-6.6c0 -.3 .1 -.5 .3 -.7l4.7 -4.7c.2 -.2 .4 -.3 .7 -.3z"
+                                            ></path>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                          </svg>
+                                        </div>
+                                      &nbsp;
+                                      En desarrollo temprano
+                                  </div>
+                                </span>
                             </div>
                             <div class="space-y-4">
                                 <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
                                   <div class="flex">
-                                    <div class="flex-shrink-0">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        stroke-width="1.5"
-                                        stroke="currentColor"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      >
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M12 9v2m0 4v.01"></path>
-                                        <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
-                                      </svg>
-                                    </div>
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler icon-tabler-info-circle text-oyster"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="2"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                          <polyline points="11 12 12 12 12 16 13 16"></polyline>
+                                        </svg>
+                                      </div>
                                     <div class="ml-3">
-                                      <h3 class="text-pumpikin text-base font-medium">Importante:</h3>
+                                      <h3 class="text-oyster text-base font-medium">Importante:</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                        <p>Los ejemplos de sintaxis que estudiaremos corresponden a la versi&oacute;n <i>Alfa 0.0.1</i>. Es de esperar cambios sensibles en el futuro cercano.</p>
+                                        <p>Los operadores que veremos a continuaci&oacute;n corresponden a la versi&oacute;n <i>Alfa 0.0.1</i>. Si bien, la manera de procesarlos puede llegar a modificarse, no es de esperar que sufran cambios relevantes con respecto a su uso y la funci&oacute;n que cumplen dentro del lenguaje. Esto incluye a los <i class="text-periblue">Operadores integrados parcialmente y a los que se encuentran en desarrollo</i>.</p>
+                                        <p><i class="text-periblue">El orden de precedencia para todos los operadores comunes, se equipara al de la mayor&iacute;a de los lenguajes</i>.</p>
                                       </div>
                                     </div>
                                   </div>
@@ -788,10 +858,10 @@
                           </div>
                         </div>
 
-                        <div class="space-y-12" id="variables">
+                        <div class="space-y-12" id="logic-operators">
                             <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
-                              <a href="https://github.com/LitGirl/litgirl" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue" target="_blank">
-                                Variables de transpilaci&oacute;n
+                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                Operadores L&oacute;gicos
                                 <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                   <path fill="none" d="M0 0h24v24H0z" />
                                   <path
@@ -801,101 +871,13 @@
                                 </svg>
                               </a>
                             </h2>
-                            <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span>{=dataLit.titles.2}<span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                  Las <i>variables de transpilaci&oacute;n</i> son parte esencial de los <i>Templates</i>. Representan la unidad m&iacute;nima de inyecci&oacute;n de datos admitida por <i>Lit</i>.
-                                </p>
-                            </div>
-                            <div class="space-y-6">
-                                <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                                  <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                    Partes de las variables
-                                    <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                      <path fill="none" d="M0 0h24v24H0z" />
-                                      <path
-                                        fill="currentColor"
-                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                      />
-                                    </svg>
-                                  </a>
-                                </h3>
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                    1.- <strong><i class="text-periblue">{=</i></strong>&nbsp; Apertura del transpilador.
-                                    <br>
-                                    <br>
-                                    2.- <strong><i class="text-periblue">dataLit.titles.2</i></strong>&nbsp; De d&oacute;nde obtiene los datos a asignar. Por ejemplo, en este caso concreto, el compilador buscar&aacute; el valor en el almac&eacute;n de datos abstractos <i>dataLit</i> (el cual creamos con <i>setDataLit()</i> como ya vimos en la <a href="./starter.html#quickstart" class="underline text-oyster hover:text-comet dark:text-manatee">gu&iacute;a de inicio r&aacute;pido</a>), y a continuaci&oacute,n tomar&aacute; la tercera posici&oacute;n de la propiedad <i>titles</i>, que evidentemente es un array.
-                                    <br>
-                                    <br>
-                                    3.- <strong><i class="text-periblue">}</i></strong>&nbsp; Cierre de la instrucci&oacute;n.
-                                </p>
-                            </div>
-                            <div class="space-y-6">
-                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                  Aqu&iacute; podemos ver otros dos ejemplos. En el primero se asigna una url a la etiqueta &lt;link&gt;, para enlazar un archivo css. En el segundo ejemplo, se asigna una clase a un elemento HTML. Cabe se&ntilde;alar que estas caracter&iacute;sticas se pueden potenciar utilizando los condicionales de <i>Dynamo</i>. Pero esto lo veremos m&aacute;s adelante.
-                                </p>
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">link</span> <span class="syntax--entity syntax--other syntax--attribute-name">rel</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">stylesheet</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">href</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.urls.css}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">media</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">all</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">nonce</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">div</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.classList}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">       </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Este contenido HTML se mantiene inalterado --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace"></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
-                            </div>
-                            <div class="space-y-4">
-                              <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
-                                <div class="flex">
-                                  <div class="flex-shrink-0">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="icon icon-tabler icon-tabler-info-circle text-oyster"
-                                      width="20"
-                                      height="20"
-                                      viewBox="0 0 24 24"
-                                      stroke-width="2"
-                                      stroke="currentColor"
-                                      fill="none"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                    >
-                                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                      <circle cx="12" cy="12" r="9"></circle>
-                                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                                      <polyline points="11 12 12 12 12 16 13 16"></polyline>
-                                    </svg>
-                                  </div>
-                                  <div class="ml-3">
-                                    <h3 class="text-oyster text-base font-medium">Info</h3>
-                                    <div class="text-santa mt-2 text-sm">
-                                      <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">En los ejemplos anteriores, la variables toman su valor de propiedades contenidas en el objeto <i>dataLit</i>. Sin embargo, estos valores pueden provenir de cualquier otro objeto o variable que est&eacute; dentro del alcance de <i>Lit</i>. Mira el siguiente ejemplo para entender mejor a qu&eacute; nos referimos.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                          <div class="space-y-6">
-                              <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">text/javascript</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">            </span><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> greets <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--string syntax--quoted">'Hola Mundo'</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--source syntax--js"><span class="leading-whitespace">        </span></span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">h1</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">txt-center red m-t-10 m-b-10 bold</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">            </span>{=greets}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">h1</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
-                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                Como puedes ver en este otro ejemplo, el valor a transpilar se obtiene directamente de una constante que se ha declarado en el propio documento. Con lo cual sustituir&aacute; <i>{=greets}</i> pot la frase <i>Hola Mundo</i>. De la misma manera funcionar&iacute;a si esta constante, o cualquier otro tipo de dato que contuviera un valor, estuviera dentro de otro archivo JavaScript incluido en el documento.
-                              </p>
-                          </div>
-                        </div>
-                        <div class="space-y-12" id="constants">
-                          <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
-                            <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                              Constantes de compaginaci&oacute;n
-                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                  fill="currentColor"
-                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                />
-                              </svg>
-                            </a>
-                          </h2>
-                          <div class="space-y-6">
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              Las <i>Constantes de compaginaci&oacute;n</i> son expresiones Dynamo en la estructura de las p&aacute;ginas del sitio, que indican a Lit fragmentos HTML que debe buscar, compilar e inyectar en el template. Normalmente dichos fragmentos se encontraran en el directorio <i>parts</i> de LitGirl. Aunque, como ya explicamos en la <a href="./starter.html#quickstart" class="underline text-oyster hover:text-comet dark:text-manatee">gu&iacute;a de inicio r&aacute;pido</a>, esto depender&aacute; de si se ha alterado o no la configuraci&oacute;n por defecto de Lit al momento de inicializar la aplicaci&oacute;n.
+                              Los <i>Operadores l&oacute;gicos</i> nos proporcionan un resultado a partir de que se cumpla o no una serie de condiciones. Estas condiciones, tambi&eacute;n han de devolver valores booleanos o asimilables a ellos. Por ejemplo, una comparaci&oacute;n no extrica en JavaScript entre los valores 0, '0' y false, devolver&aacute; true. La combinaci&oacute;n de dos o m&aacute;s operadores l&oacute;gicos se denomina una: funci&oacute;n l&oacute;gica. <i class="text-periblue">* Los operadores l&oacute;gicos en Dynamo no cuentan con contrapartes literales como en otros lenguajes. Solamente su variante simb&oacute;lica es admitida. Aunque de momento algunas puedan funcionar, dejar&aacute;n de hacerlo en versiones tempranas del lenguaje.</i>.
                             </p>
                             <div class="space-y-6">
                                 <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                                   <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                    Aqu&iacute; algunos ejemplos:
+                                    Operadores l&oacute;gicos en Dynamo
                                     <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                       <path fill="none" d="M0 0h24v24H0z" />
                                       <path
@@ -905,37 +887,98 @@
                                     </svg>
                                   </a>
                                 </h3>
-                                <div class="space-y-6">
-                                    <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">UTF-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">name</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">viewport</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">width=device-width, initial-scale=1.0</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">http-equiv</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">X-UA-Compatible</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">ie=edge</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=meta-tags}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=https://domain/path/test-load.html}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=includes/test-footer}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
+                                <div class="space-y-4">
+                                    <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                      <div class="flex">
+                                        <div class="flex-shrink-0">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          >
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <circle cx="12" cy="12" r="9"></circle>
+                                            <path d="M9 12l2 2l4 -4"></path>
+                                          </svg>
+                                        </div>
+                                        <div class="ml-3">
+                                          <h3 class="text-herbs text-base font-medium">Operador AND (&&)</h3>
+                                          <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>El 'Y' l&oacute;gico, eval&uacute;a dos o m&aacute;s segmentos de condiciones.</p>
+                                            <p>Solamente devuelve verdadero (true) si todas ellas se han cumplido. Basta que una falle para que el resultado sea false.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                 </div>
-                                <div class="space-y-6">
-                                    <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                                      <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                        Partes de las constantes
-                                        <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                          <path fill="none" d="M0 0h24v24H0z" />
-                                          <path
-                                            fill="currentColor"
-                                            d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                          />
-                                        </svg>
-                                      </a>
-                                    </h3>
-                                    <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                        1.- <strong><i class="text-periblue">{{=</i></strong>&nbsp; Declaraci&oacute;n de apertura.
-                                        <br>
-                                        <br>
-                                        2.- <strong><i class="text-periblue">meta-tags</i></strong>&nbsp; En la primera constante simplemente se asigna un nombre de un archivo HTML a ser compilado e insertado dentro del documento desde el que se solicita. Como puedes observar, no es estrictamente obligatorio indicarle la extensi&oacute;n del archivo, es suficiente con el nombre. Sin embargo, recomendamos, al menos de momento, agregar la extensi&oacute;n tal que para este caso quedar&iacute;a as&iacute;: <strong><i class="text-periblue">meta-tags.html</i></strong>
-                                        <br>
-                                        <br>
-                                        3.- <strong><i class="text-periblue">https://domain/path/test-load.html</i></strong>&nbsp; Este tipo de declaraci&oacute;n se utiliza principalmente cuando se necesita cargar un componente o fragmento espec&iacute;fico desde una url distinta a la urlBase con la que se configur&oacute; LitGirl al inicializarse. Tambi&eacute;n puede utilizarse este tipo de asignaci&oacute;n para incluir componentes o fragmentos desde un sitio externo <i class="text-periblue">siempre que las pol&iacute;ticas de CORS lo permitan</i>.
-                                        <br>
-                                        <br>
-                                        4.- <strong><i class="text-periblue">includes/test-footer</i></strong>&nbsp; En este ejemplo, asumimos el supuesto de que se ha creado un directorio <i>includes</i> dentro de <i>partials</i>, o el directorio base para los componentes y fragmentos que se haya configurado al inicializar LitGirl. La estructura puede tener la profundidad de directorios que necesitemos para nuestro proyecto.
-                                        <br>
-                                        <br>
-                                        5.- <strong><i class="text-periblue">}}</i></strong>&nbsp; Cierre de la declaraci&oacute;n.
-                                    </p>
+                                <div class="space-y-4">
+                                    <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                      <div class="flex">
+                                        <div class="flex-shrink-0">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          >
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <circle cx="12" cy="12" r="9"></circle>
+                                            <path d="M9 12l2 2l4 -4"></path>
+                                          </svg>
+                                        </div>
+                                        <div class="ml-3">
+                                          <h3 class="text-herbs text-base font-medium">Operador OR (||)</h3>
+                                          <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>El 'O' l&oacute;gico, eval&uacute;a dos o m&aacute;s segmentos de condiciones.</p>
+                                            <p>Devuelve verdadero (true) si al menos una de ellas se han cumplido. Basta que una sea vrdadera para que el resultado sea true.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                      <div class="flex">
+                                        <div class="flex-shrink-0">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          >
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <circle cx="12" cy="12" r="9"></circle>
+                                            <path d="M9 12l2 2l4 -4"></path>
+                                          </svg>
+                                        </div>
+                                        <div class="ml-3">
+                                          <h3 class="text-herbs text-base font-medium">Operador NOT (!)</h3>
+                                          <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>El 'NOT' l&oacute;gico, eval&uacute;a un segmento o bloque de condici&oacute;n (dependiendo del caso).</p>
+                                            <p>Devuelve true si el false es verdadro. En otras palabras y para no enredarnos. Invierte el sentido 'natural' de la condici&oacute;n.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="space-y-4">
                                     <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
@@ -959,9 +1002,11 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-brink text-base font-medium">NO agregar la barra inicial ( / )</h3>
+                                          <h3 class="text-brink text-base font-medium">Operador XOR (<|>)</h3>
                                           <div class="text-santa mt-2 text-sm">
-                                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Cuando se indique una ruta a una <i>constante de compaginaci&oacute;n</i> que se encuentre en la url base con la que se inicializ&oacute; LitGirl, se debe comenzar directamente por el nombre del archivo a compaginar. O en su defecto, el nombre del primer directorio d&oacute;nde debe comenzar a buscarlo. La '/' inicial es innecesaria para el compilador de Lit y hemos optado por omitirla. Por ejemplo: <i class="text-periblue">{{=/meta-tags}}</i> o <i class="text-periblue">{{=/includes/test-footer}}</i> provocaran un error de compilaci&oacute;n.</p>
+                                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                                El operador 'XOR' l&oacute;gico se encuentra actualmente en proceso de integraci&oacute;n. Una vez estandarizado en el lenguaje su funci&oacute;n sera definir que una u otra condici&oacute;n en una funci&oacute;n l&oacute;gica se cumpla, pero no ambas. Por ejemplo: si una condici&oacute;n devuelve true y la otra false, entonces 'XOR' devuelve true. Si ambas condiciones fueran true o false, entonces 'XOR' devolver&aacute; false.
+                                            </p>
                                           </div>
                                         </div>
                                       </div>
@@ -969,10 +1014,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="space-y-12" id="full-example">
+                        <div class="space-y-12" id="comparation-operators">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                              Ejemplo completo
+                              Operadores de Comparaci&oacute;n
                               <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path
@@ -982,50 +1027,298 @@
                               </svg>
                             </a>
                           </h2>
+                          <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                            Los <i>Operadores comparaci&oacute;n</i> son utilizados para comparar los valores, tipos y otras caracter&iacute;sticas de los operandos entre los que se aplican en busca de igualdad, diferencia, etc. Devolver&aacute;n un valor booleano como resultado. <i class="text-periblue">Como veremos, algunos de ellos presentan variantes de comparaci&oacute;n simple (no se compara el tipo de los datos) y otra estricta donde s&iacute; es comparado</i>.
+                          </p>
                           <div class="space-y-6">
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                A continuaci&oacute;n, tienes una visi&oacute;n de conjunto de todo el c&oacute;digo que hemos utilizado en los diferentes apartados de esta secci&oacute;n. Pensamos que puede resultarte &uacute;til para comprender mejor el funcionamiento de las <i>Variables de transpilaci&oacute;n </i> y <i>Constantes de compaginaci&oacute;n</i> de Dynamo que LitGirl debe compilar.
-                            </p>
-                            <div class="space-y-6">
-                                <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">UTF-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">name</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">viewport</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">width=device-width, initial-scale=1.0</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">http-equiv</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">X-UA-Compatible</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">ie=edge</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span>{=dataLit.titles.2}<span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=meta-tags}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">link</span> <span class="syntax--entity syntax--other syntax--attribute-name">rel</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">stylesheet</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">href</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.urls.css}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">media</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">all</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">nonce</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=https://domain/path/test-load.html}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">div</span> <span class="syntax--entity syntax--other syntax--attribute-name">class</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">{=dataLit.default.classList}</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Este contenido HTML se mantiene inalterado --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{=includes/test-footer}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
-                            </div>
-                          </div>
-                          <div class="space-y-4">
-                              <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
-                                <div class="flex">
-                                  <div class="flex-shrink-0">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
-                                      width="20"
-                                      height="20"
-                                      viewBox="0 0 24 24"
-                                      stroke-width="1.5"
-                                      stroke="currentColor"
-                                      fill="none"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                    >
-                                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                      <circle cx="12" cy="12" r="9"></circle>
-                                      <path d="M9 12l2 2l4 -4"></path>
-                                    </svg>
-                                  </div>
-                                  <div class="ml-3">
-                                    <h3 class="text-herbs text-base font-medium">Protecci&oacute;n contra Harvesters y Scrapers</h3>
-                                    <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                      <p>Como ventaja adicional, y muy relevante por cierto, las <i>Variables de transpilaci&oacute;n</i> al igual que las <i>Constantes de compaginaci&oacute;n</i> ofrecen una capa extra de seguridad frente a Cosechadoras(Harvesters) y los Raspadores web(Scrapers).</p>
-                                      <p>El uso corecto de la encapsulaci&oacute;n dificulta que programas maliciosos puedan obtener datos sensibles, tales como n&uacute;meros de tel&eacute;fono, direcciones de email o la estructura real de las p&aacute;ginas, con un simple escaneo del sitio. Lo que, normalmente para lograrlo, conlleva tener conocimientos algo avanzados de programaci&oacute;n o contratar servicios externos tales como Cloudflare, por nombrar uno de los m&aacute;s populares.</p>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Igualdad simple (==)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '==', eval&uacute;a si dos valores son equiparables, aunque sean un tipo de dato distinto.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado true</i>.</p>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
                               </div>
-                          </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Igualdad estricta (===)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '===', eval&uacute;a si dos valores son <i class="text-periblue">exactamente iguales</i>, esto incluye que sean el mismo tipo de dato.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado false</i>.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Diferencia simple (!=)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '!=', eval&uacute;a si dos valores son diferentes o no equiparables, sin tomar en cuenta el tipo de dato.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado false</i>.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Diferencia estrita (!==)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '!==', eval&uacute;a si dos valores son estrictamente diferentes, incluyendo el tipo de dato de cada uno.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado true</i>.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Menor que (<)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '<', eval&uacute;a si el valor de la izquierda es menor que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 < 5 devuelve true. Pero comparar 0 < 'Hola' generar&aacute; un error</i>.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Mayor que (>)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '>', eval&uacute;a si el valor de la izquierda es mayor que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 > 5 devuelve false. Pero comparar 0 > 'Hola' generar&aacute; un error</i>.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Menor o igual que (<=)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '<=', eval&uacute;a si el valor de la izquierda es menor o igual que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 <= 5 devuelve true. Pero comparar 0 <= 'Hola' generar&aacute; un error</i>.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-success icon-tabler-circle-check text-herbs"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <circle cx="12" cy="12" r="9"></circle>
+                                          <path d="M9 12l2 2l4 -4"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-herbs text-base font-medium">Mayor o igual que (>=)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                          <p>El operador '>=', eval&uacute;a si el valor de la izquierda es mayor o igual que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
+                                          <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 >= 5 devuelve false. Pero comparar 0 >= 'Hola' generar&aacute; un error</i>.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-psycho icon-tabler-alert-octagon text-brink"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-brink text-base font-medium">Equivalente a (<>)</h3>
+                                        <div class="text-santa mt-2 text-sm">
+                                          <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                              El operador '<>', eval&uacute;a si el valor de la izquierda es igual o equivalente al de la derecha. Evaluar valores que no sean equiparables, no causar&aacute; error. Este operador se encuentra a&uacute;n en etapa de desarrollo.
+                                              <br>
+                                              <i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 <> '0' o false <> 'false' devuelve true. Pero comparar 0 <> false devolver&aacute; false</i>.
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
                         </div>
-                        <div class="space-y-12" id="quickstart">
+                        <div class="space-y-12" id="asignation-operators">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                              Bastante sencillo, ¿no?
+                              Operadores de Asignaci&oacute;n
                               <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path
@@ -1035,23 +1328,351 @@
                               </svg>
                             </a>
                           </h2>
+                          <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                            Los <i>Operadores asignaci&oacute;n</i> son utilizados normalmente para asignar un valor de la derecha al objeto de la izquierda. <i class="text-periblue">De momento, Dynamo solamente tiene el operador de asignaci&oacute;n simple parcialmente estandarizado en ciertos contextos. Esta lista se ampliar&aacute; en el futuro</i>.
+                          </p>
                           <div class="space-y-6">
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                Como habr&aacute;s podido notar, si ya conoces algunos de los motores de plantillas m&aacute;s populares, la sintaxis utilizada en los templates de <i>Lit</i> tiene algunas similitudes con la utilizada en varios de ellos. La principal diferencia con el resto, es la potencia, el alcance y la versatilidad que se les a incorporado a las mismas.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                <strong class="text-periblue">* Sin embargo, donde realmente LitGirl alcanza su mayor potencia, es con el uso de las estructuras de control incorporadas en Dynamo. Estos son bastante poderosos y tambi&eacute;n pueden utilizarse para manejos m&aacute;s complejos de las <i>Variables y Constantes</i> que vimos en este cap&iacute;tulo. Pero esto lo tratamos en una secci&oacute;n espec&iacute;fica sobre: </strong> <a href="./control-structures.html" class="underline inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                    Condicionales, bucles y rangos
-                                    <svg class="w-4 h-4 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                      <path fill="none" d="M0 0h24v24H0z" />
-                                      <path
-                                        fill="currentColor"
-                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                      />
-                                    </svg>
-                                </a>.
-                            </p>
-                          </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador de asignaci&oacute;n simple (=)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '=' operador, asigna el valor que se encuentra a su derecha al objeto que se encuentra a su izquierda.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la transacci&oiacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <i class="text-periblue">Existen varios tipos m&aacutes de Operadores de Asignaci&oacute;n que posiblemente sean agregados pronto a Dynamo. Aunque ahora, a efectos de no hacer demasiado pesada la documentaci&oacute;n, se omiten. Se incluir&aacute;n en el momento que tengan, al menos, un mediano soporte dentro del lenguaje</i>.
+                              </p>
+                            </div>
+                        </div>
+                        <div class="space-y-12" id="asignation-operators">
+                          <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                            <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                              Operadores Matem&aacute;ticos
+                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                  fill="currentColor"
+                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                />
+                              </svg>
+                            </a>
+                          </h2>
+                          <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                            Los <i>Operadores matem&aacute;ticos</i> que proveen los lenguajes, permiten realizar operaciones de c&aacute;lculo computacional. <i class="text-periblue">De momento, Dynamo tiene soporte limitado para algunos operadores dependiendo del contexto. En el contexto de los argumentos de condicionales, pueden ser utilizados y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;n</i>.
+                          </p>
+                          <div class="space-y-6">
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador suma (+)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '+' operador, adiciona dos valores que sean evaluados compatibles para realizar la operaci&oacute;n.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador incremento (++)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '++' operador, incrementa en 1 el valor al que se aplica. Si se coloca antes del valor a incrementar (pre-incremento), incrementa antes de evalur el valor inicial. Si se coloca despu&eacute;s del valor a incrementar (post-incremento), realiza el proceso inverso.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador resta (-)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '-' operador, resta dos valores que sean evaluados compatibles para realizar la operaci&oacute;n. Si se coloca delante de un valor num&eacute;rico lo convertir&aacute; a negativo.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador decremento (--)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '++' operador, decrementa en 1 el valor al que se aplica. Si se coloca antes del valor a decrementar (pre-decremento), decrementa antes de evalur el valor inicial. Si se coloca despu&eacute;s del valor a decrementar (post-decremento), realiza el proceso inverso.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador multiplicar (*)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '*' operador, multiplica dos valores que sean evaluados compatibles para realizar la operaci&oacute;n.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador potencia (**)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '**' operador, calcula la potencia del valor base a la izquierda por el exponente a la derecha. Por ejemplo: 2**3 dar&aacute; como resultado 8. Bases o potencias negativas deben ir entre par&eacute;ntesis.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador dividir (/)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '/' operador, divide dos valores que sean evaluados compatibles para realizar la operaci&oacute;n. Utilizar en divisiones entre 0, generar&aacute; un resultado inesperado.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="space-y-4">
+                                  <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                    <div class="flex">
+                                      <div class="flex-shrink-0">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        >
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M12 9v2m0 4v.01"></path>
+                                          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <h3 class="text-pumpikin text-base font-medium">Operador m&oacute;dulo (%)</h3>
+                                        <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>
+                                                El '%' operador, calcula el resto de una divisi&oacute;n. Por ejemplo: 5 % 2 devolver&aacute; 1 como resultado.
+                                            </p>
+                                            <p>
+                                                <strong><i class="text-periblue">En el contexto de los argumentos de condicionales, puede ser utilizado y posteriormente evaluada la operaci&oacute;n. En otros contextos, de momento, seguramente fallar&aacute;</i></strong>.
+                                            </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <i class="text-periblue">Existen varios tipos m&aacutes de Operadores Matem&aacute;ticos que posiblemente sean agregados pronto a Dynamo. Aunque ahora, a efectos de no hacer demasiado pesada la documentaci&oacute;n, se omiten. Se incluir&aacute;n en el momento que tengan, al menos, un mediano soporte en Dynamo</i>.
+                              </p>
+                            </div>
                         </div>
                         <div class="space-y-12" id="contact">
                             <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
@@ -1220,28 +1841,28 @@
                 <div class="w-full mx-auto">
                   <div class="lg:grid-cols-2 lg:divide-x dark:divide-x-gun dark:divide-gun grid grid-cols-1">
                     <div>
-                      <a href="./starter.html">
+                      <a href="./lit-methods.html">
                         <div class="bg-ghost dark:bg-cinder dark:hover:bg-tuna hover:bg-metal sm:px-6 lg:px-8 group px-4 pt-8 pb-16">
                           <span class="text-comet dark:text-manatee dark:hover:text-oyster text-sm font-normal"> Anterior </span>
                           <p
                             class="lg:text-base text-comet dark:text-manatee sm:text-xl dark:group-hover:text-periblue darkgroup-hover:text-periblue group-hover:text-pearl text-xs font-light"
                           >
                             <span>Documentaci&oacute;n:</span>
-                            <span>Empezar</span>
+                            <span>M&eacute;todos de Lit</span>
                           </p>
                         </div>
                       </a>
                     </div>
 
                     <div>
-                      <a href="./control-structures.html" class="">
+                      <a href="../recomendations.html" class="">
                         <div class="md:mt-0 bg-ghost dark:bg-cinder dark:hover:bg-tuna hover:bg-metal sm:px-6 lg:px-8 group px-4 pt-8 pb-16 w-full text-right">
                           <span class="text-comet dark:text-manatee text-sm font-normal"> Siguiente </span>
                           <p
                             class="lg:text-base text-comet dark:text-manatee sm:text-xl dark:group-hover:text-periblue darkgroup-hover:text-periblue group-hover:text-pearl space-x-2 text-xs font-light"
                           >
-                            <span>Documentaci&oacute;n:</span>
-                            <span>Estructuras de control</span>
+                            <span>Inicio:</span>
+                            <span>Recomendaciones</span>
                           </p>
                         </div>
                       </a>
