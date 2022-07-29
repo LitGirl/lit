@@ -266,7 +266,7 @@
                 <div class="flex justify-between h-16">
                   <div class="flex items-center justify-center flex-1 px-2 space-x-8 lg:ml-6 lg:justify-end">
                     <div class="w-full max-w-lg lg:max-w-xs">
-                      <label for="search" class="sr-only">Search</label>
+                      <label for="search" class="sr-only">Filter</label>
                       <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                           <!-- Heroicon name: solid/search -->
@@ -282,7 +282,7 @@
                           id="search"
                           name="search"
                           class="block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md text-mana border-smoke dark:bg-tuna placeholder-santa focus:outline-none focus:placeholder-oyster focus:ring-1 focus:ring-oyster focus:border-oyster sm:text-sm dark:border-river"
-                          placeholder="Search"
+                          placeholder="Filter sections..."
                           type="search"
                         />
                       </div>
@@ -680,12 +680,17 @@
                 </div>
               </section>
               <section class="pt-6 pb-24 bg-white dark:bg-tuna">
+                  <div id="no-results" class="px-4 mx-auto sm:px-6 md:px-32" style="display: none">
+                      <h2 class="text-lg font-normal text-brink lg:text-2xl group noSearch">
+                          No encontramos resultados...
+                      </h2>
+                  </div>
                 <div class="px-4 mx-auto sm:px-6 md:px-32">
                   <!-- Replace with your content -->
                   <section>
                     <div class="max-w-3xl">
                       <div class="mx-auto space-y-24 text-lg text-left">
-                        <div class="space-y-8">
+                        <div id="hiddable" class="space-y-8">
                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg md:mt-5 md:text-xl">
                             En este cap&iacute;tulo vamos a recorrer los distintos <i>M&eacute;todos de Lit</i> que forman parte de su interface. Dichos m&eacute;todos se dividen en tres grupos principales: <i class="text-periblue">Instancia</i>, <i class="text-periblue">Auxiliares</i> e <i class="text-periblue">Internos</i>. Tanto los m&eacute;todos de <i class="text-periblue">Instancia</i> como los <i class="text-periblue">Auxiliares</i> forman parte de la inteface de acceso y pueden invocarse directamente por el usuario. Ser&aacute;n los que trataremos aqu&iacute;. Por el contrario, los m&eacute;todos <i class="text-periblue">Internos</i>, como su nombre indica, fueron creados para ser accedidos &uacute;nicamente de manera interna por <i>Lit</i> y de mencionarlos, lo haremos de manera muy superficial. La uni&oacute;n de estos tres grupos de m&eacute;todos confoman el <i class="text-periblue">Core de LitGirl</i>.
                           </p>
@@ -716,96 +721,103 @@
                         </div>
 
                         <div class="space-y-12" id="instance">
-                          <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
-                            <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                              M&eacute;todos de Instancia
-                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                  fill="currentColor"
-                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                />
-                              </svg>
-                            </a>
-                          </h2>
                           <div class="space-y-6">
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <i>LitGirl</i> esta pensado para, dentro de lo que sea posible, mantener las cosas sencillas. Es parte esencial de su filosof&iacute;a. Por lo tanto, poder comenzar a utilizarlo no implica una gran curva de aprendizaje ni conocimientos avanzados de programaci&oacute;n, o al menos eso creemos. Realmente, necesitas conocer y saber manejar solamente los tres M&eacute;todos base de Instancia. Con ellos, ya puedes lograr buenos resultados. ¡Vamos a verlos!
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                1.- <i class="text-periblue">Constructor</i>&nbsp; Es el encargado de crear una Instancia de <i>Lit</i> y hacer que sus funcionalidades est&eacute;n disponibles para todo el contexto donde han sido creada.
-                                <br>
-                                <br>
-                                2.- <i class="text-periblue">init</i>&nbsp; Parsea el <i>Template Base</i> antes de que &eacute;ste se encuentre totalmente disponible para el "cliente" y asigna las tareas correspondientes al <i>compilador</i>.
-                                <br>
-                                <br>
-                                3.- <i class="text-periblue">compile</i>&nbsp; Invoca directamente al <i>compilador</i> de <i>Lit</i>. Puede manejar par&aacute;metros de llamada y utilizarse dentro de otras funciones que se hayan definido en c&oacute;digos fuera de <i>LitGirl</i>. Dependiendo de c&oacute;mo se utilice, puede ser una herramienta con capacidades muy potentes.
-                            </p>
-                            <div class="space-y-4">
-                                <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
-                                  <div class="flex">
-                                    <div class="flex-shrink-0">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-info-circle text-oyster"
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        stroke-width="2"
-                                        stroke="currentColor"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      >
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <circle cx="12" cy="12" r="9"></circle>
-                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                                        <polyline points="11 12 12 12 12 16 13 16"></polyline>
-                                      </svg>
-                                    </div>
-                                    <div class="ml-3">
-                                      <h3 class="text-oyster text-base font-medium">Ap&oacute;yate en los comentarios</h3>
-                                      <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                        <p>Si bien la mayor&iacute;a de los m&eacute;todos que veremos son sencillos de eplicar en concepto, en su vaplicaci&oacute;n pr&aacute;ctica pueden recibir bastantes par&aacute;metros que permiten tener un mayor control sobre su comportamiento y el de <i>LitGirl</i> en general. Con el fin de mantener las cosas simples, nos apoyaremos en los comentarios que ver&aacute;s en los ejemplos de c&oacute;digo para explicar ciertos detalles de su implementaci&oacute;n.</p>
-                                        <p>
-                                            Algunos de los m&eacute;todos que veremos aqu&iacute;, tambi&eacute;n son mencionados en la <a href="./starter.html#quickstart" class="underline text-oyster hover:text-comet dark:text-manatee">Gu&iacute;a de inicio r&aacute;pido</a>.
-                                        </p>
+                              <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                                <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                  M&eacute;todos de Instancia
+                                  <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                      fill="currentColor"
+                                      d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                    />
+                                  </svg>
+                                </a>
+                              </h2>
+                              <div class="space-y-6">
+                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                  <i>LitGirl</i> esta pensado para, dentro de lo que sea posible, mantener las cosas sencillas. Es parte esencial de su filosof&iacute;a. Por lo tanto, poder comenzar a utilizarlo no implica una gran curva de aprendizaje ni conocimientos avanzados de programaci&oacute;n, o al menos eso creemos. Realmente, necesitas conocer y saber manejar solamente los tres M&eacute;todos base de Instancia. Con ellos, ya puedes lograr buenos resultados. ¡Vamos a verlos!
+                                </p>
+                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                    1.- <i class="text-periblue">Constructor</i>&nbsp; Es el encargado de crear una Instancia de <i>Lit</i> y hacer que sus funcionalidades est&eacute;n disponibles para todo el contexto donde han sido creada.
+                                    <br>
+                                    <br>
+                                    2.- <i class="text-periblue">init</i>&nbsp; Parsea el <i>Template Base</i> antes de que &eacute;ste se encuentre totalmente disponible para el "cliente" y asigna las tareas correspondientes al <i>compilador</i>.
+                                    <br>
+                                    <br>
+                                    3.- <i class="text-periblue">compile</i>&nbsp; Invoca directamente al <i>compilador</i> de <i>Lit</i>. Puede manejar par&aacute;metros de llamada y utilizarse dentro de otras funciones que se hayan definido en c&oacute;digos fuera de <i>LitGirl</i>. Dependiendo de c&oacute;mo se utilice, puede ser una herramienta con capacidades muy potentes.
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="rounded-xl border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
+                                      <div class="flex">
+                                        <div class="flex-shrink-0">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-info-circle text-oyster"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="2"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          >
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <circle cx="12" cy="12" r="9"></circle>
+                                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                            <polyline points="11 12 12 12 12 16 13 16"></polyline>
+                                          </svg>
+                                        </div>
+                                        <div class="ml-3">
+                                          <h3 class="text-oyster text-base font-medium noSearch">Ap&oacute;yate en los comentarios</h3>
+                                          <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                            <p>Si bien la mayor&iacute;a de los m&eacute;todos que veremos son sencillos de eplicar en concepto, en su vaplicaci&oacute;n pr&aacute;ctica pueden recibir bastantes par&aacute;metros que permiten tener un mayor control sobre su comportamiento y el de <i>LitGirl</i> en general. Con el fin de mantener las cosas simples, nos apoyaremos en los comentarios que ver&aacute;s en los ejemplos de c&oacute;digo para explicar ciertos detalles de su implementaci&oacute;n.</p>
+                                            <p>
+                                                Algunos de los m&eacute;todos que veremos aqu&iacute;, tambi&eacute;n son mencionados en la <a href="./starter.html#quickstart" class="underline text-oyster hover:text-comet dark:text-manatee">Gu&iacute;a de inicio r&aacute;pido</a>.
+                                            </p>
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
                                 </div>
                             </div>
-                            <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                              <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                M&eacute;todo Constructor
-                                <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                  <path fill="none" d="M0 0h24v24H0z" />
-                                  <path
-                                    fill="currentColor"
-                                    d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                  />
-                                </svg>
-                              </a>
-                            </h3>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              El <i>Constructor</i> de LitGirl es la manera de crear una Instancia de <i>Lit</i> y hacer que sus funcionalidades est&eacute;n disponibles para todo el contexto donde han sido creada. Veremos algunos ejemplos de uso a continuaci&oacute;n.
-                            </p>
+                        </div>
+                            <div class="space-y-6">
+                                <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
+                                  <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                    M&eacute;todo Constructor
+                                    <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                      <path fill="none" d="M0 0h24v24H0z" />
+                                      <path
+                                        fill="currentColor"
+                                        d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                      />
+                                    </svg>
+                                  </a>
+                                </h3>
+                                <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                  El <i>Constructor</i> de LitGirl es la manera de crear una Instancia de <i>Lit</i> y hacer que sus funcionalidades est&eacute;n disponibles para todo el contexto donde han sido creada. Veremos algunos ejemplos de uso a continuaci&oacute;n.
+                                </p>
+                              </div>
+                              <div class="space-y-6">
+                              <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
+                                <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                  Invocaci&oacute;n con valores por defecto
+                                  <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                      fill="currentColor"
+                                      d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                    />
+                                  </svg>
+                                </a>
+                              </h3>
+                              <div class="space-y-6">
+                                  <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">#your<span class="syntax--keyword syntax--operator syntax--js">-</span>start<span class="syntax--keyword syntax--operator syntax--js">-</span>file<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--variable syntax--other syntax--object syntax--property syntax--unquoted">js</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--line">//Lo primero es importar el motor de LitGirl</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--keyword syntax--control">import</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span><span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span> <span class="syntax--keyword syntax--control">from</span> <span class="syntax--string syntax--quoted">'./core/start.js'</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+Invocamos el método constructor y almacenamos la instancia de Lit en una constante.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+En este caso dejamos que Lit inicie con sus valores por defecto.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> lit <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--keyword syntax--operator syntax--new">new</span> <span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
+                              </div>
                           </div>
-                          <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                            <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                              Invocaci&oacute;n con valores por defecto
-                              <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                  fill="currentColor"
-                                  d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                />
-                              </svg>
-                            </a>
-                          </h3>
                           <div class="space-y-6">
-                              <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">#your<span class="syntax--keyword syntax--operator syntax--js">-</span>start<span class="syntax--keyword syntax--operator syntax--js">-</span>file<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--variable syntax--other syntax--object syntax--property syntax--unquoted">js</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--line">//Lo primero es importar el motor de LitGirl</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--keyword syntax--control">import</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span><span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span> <span class="syntax--keyword syntax--control">from</span> <span class="syntax--string syntax--quoted">'./core/start.js'</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+Invocamos el método constructor y almacenamos la instancia de Lit en una constante.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+En este caso dejamos que Lit inicie con sus valores por defecto.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> lit <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--keyword syntax--operator syntax--new">new</span> <span class="syntax--meta syntax--class">Lit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
-                          </div>
                           <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                               Configuraci&oacute;n del Constructor
@@ -975,7 +987,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-oyster text-base font-medium">Ambas propiedades pueden sobreescribirse</h3>
+                                        <h3 class="text-oyster text-base font-medium noSearch">Ambas propiedades pueden sobreescribirse</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>Ambas propiedades <i class="text-periblue">output y method</i>&nbsp; pueden ser editadas a trav&eacute;s de algunos m&eacute;todos de la <i>Interfaz de usuario de Lit</i> que veremos m&aacute;s adelante.</p>
                                         </div>
@@ -983,6 +995,7 @@
                                     </div>
                                   </div>
                               </div>
+                            </div>
                           </div>
                           <div class="space-y-6">
                               <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
@@ -1043,7 +1056,7 @@
                                             </svg>
                                           </div>
                                           <div class="ml-3">
-                                            <h3 class="text-oyster text-base font-medium">Objeto de configuraci&oacute;n Init</h3>
+                                            <h3 class="text-oyster text-base font-medium noSearch">Objeto de configuraci&oacute;n Init</h3>
                                             <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                               <p>Adicionalmente, existe un par&aacute;metro extra de configuraci&oacute;n que puede ser pasado a <i>init</i>. Sin embargo, formar&aacute; parte de una pr&oacute;xima versi&oacute;n de <i>LitGirl</i>, ya que falta por definir aspectos concretos de su alcance.</p>
                                             </div>
@@ -1103,7 +1116,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Advertencia</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Advertencia</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 Las propiedades <i class="text-periblue">data, output y method</i>&nbsp; que veremos a continuaci&oacute;n, se comportan de la misma forma que sus hom&oacute;nimas del <i>Objeto de configuraci&oacute;n</i> del Constructor. Util&iacute;zalas con precauci&oacute;n, ya que tienen alcance global dentro de <i>Lit</i> y sobreescriben las anteriores.
@@ -1148,6 +1161,7 @@
                           </div>
                         </div>
                         <div class="space-y-12" id="helpers">
+                        <div class="space-y-6">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                               M&eacute;todos Auxiliares de Lit
@@ -1183,7 +1197,7 @@
                                     </svg>
                                   </div>
                                   <div class="ml-3">
-                                    <h3 class="text-oyster text-base font-medium">Sobre este grupo de m&eacute;todos </h3>
+                                    <h3 class="text-oyster text-base font-medium noSearch">Sobre este grupo de m&eacute;todos </h3>
                                     <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                       <p>Los <i class="text-periblue">Auxiliares</i> de <i>Lit</i> son un grupo de tres m&eacute;todos que se exponen en la <i>interface de usuario</i> y que nos permiten tener un mayor control de los procesos y tareas que ejecuta <i>Lit</i>.</p>
                                       <p>Este grupo lo componen <i class="text-periblue">setDataLit, getModule y getComponent</i>&nbsp; y todos ellos tienen la capacidad de manejar la asincron&iacute;a.</p>
@@ -1191,6 +1205,7 @@
                                   </div>
                                 </div>
                               </div>
+                          </div>
                           </div>
                           <div class="space-y-6">
                               <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
@@ -1265,7 +1280,7 @@
                                             </svg>
                                           </div>
                                           <div class="ml-3">
-                                            <h3 class="text-pumpikin text-base font-medium">Omitir 'get' no tendr&aacute; efecto</h3>
+                                            <h3 class="text-pumpikin text-base font-medium noSearch">Omitir 'get' no tendr&aacute; efecto</h3>
                                             <div class="text-santa mt-2 text-sm">
                                               <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Omitir <i class="text-periblue">get</i> no tendr&aacute; efecto alguno. <i>setDataLit</i> igualmente recurrir&aacute; a los valores por defecto he intentar&aacute; importar datos.</p>
                                               <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
@@ -1310,7 +1325,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Puedes omitirla sin m&aacute;s</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Puedes omitirla sin m&aacute;s</h3>
                                         <div class="text-santa mt-2 text-sm">
                                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Puedes omitir <i class="text-periblue">set</i> sin problemas. Asignarle cualquier valor que pueda ser  evaluado como false, tiene el mismo efecto que omitirla.</p>
                                         </div>
@@ -1346,7 +1361,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Recuerda que son de tipo estricto</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Recuerda que son de tipo estricto</h3>
                                         <div class="text-santa mt-2 text-sm">
                                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg"> <i class="text-periblue">Esto significa que, cualquier valor que no sea un true expl&iacute;cito ser&aaacute; evaluado como false</i>.</p>
                                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg"> Esto es porque, los procesos que desencadenan pueden alterar seriamente los datos, tanto internos como globales. Siempre pueden ocurrir errores, pero esta restricci&oacute;n de tipo intenta, al menos, minimizar las posibilidades en un aspecto tan sensible.</p>
@@ -1380,7 +1395,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Cuidado con 'merge'</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Cuidado con 'merge'</h3>
                                         <div class="text-santa mt-2 text-sm">
                                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg"> <strong><i class="text-periblue">* Lo que realiza setDataLit con 'merge' no es precisamente una concatenaci&oacute;n de datos. Es un 'merge de claves', no de valores. Si ya existe una clave en el objeto global 'datalit' con el mismo nombre, forzar&aacute; la entrada sobreescribiendo la anterior para evitar conflictos y redundancias</i></strong>.</p>
                                         </div>
@@ -1413,7 +1428,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Cuidado con 'replicate'</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Cuidado con 'replicate'</h3>
                                         <div class="text-santa mt-2 text-sm">
                                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg"> <strong><i class="text-periblue">* Lo que realiza setDataLit con 'replicate' no es una concatenaci&oacute;n de datos. Directamente vac&iacute;a el Objeto de datos interno, eliminando todas las referencias a dichos datos, y luego le asigna los nuevos</i></strong>.</p>
                                         </div>
@@ -1504,6 +1519,7 @@
                                       3.- <strong><i class="text-periblue">Objeto de configuraci&oacute;n</i></strong>&nbsp; Sigue las mismas reglas que en el <i>M&eacute;todo getComponent</i>. Si lo deseas, puedes revisarlo nuevamente desde este enlace: <a href="#cast" class="underline text-oyster hover:text-comet dark:text-manatee">Propiedad cast en el M&eacute;todo getComponent</a>. <i class="text-periblue">* NO es obligatorio, pero si se omite o se pasa como null, getModule devolver&aacute; el/los m&oacute;dulo/s sin procesar</i>.
                                   </p>
                               </div>
+                              </div>
                               <div class="space-y-6">
                                   <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                                     <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
@@ -1524,7 +1540,6 @@
                                       <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js">#your<span class="syntax--keyword syntax--operator syntax--js">-</span>start<span class="syntax--keyword syntax--operator syntax--js">-</span>file<span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--variable syntax--other syntax--object syntax--property syntax--unquoted">js</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ Invocando setDataLit con sus valores por defecto</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--constant syntax--other">LIT</span><span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">setDataLit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ Creando un Objeto de configuración para setDataLit</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--storage syntax--modifier">const</span> <span class="syntax--constant syntax--other">CONF_DATALIT</span> <span class="syntax--keyword syntax--operator syntax--js">=</span> <span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">    </span><span class="syntax--variable syntax--other syntax--object syntax--property">get</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">        </span><span class="syntax--variable syntax--other syntax--object syntax--property">url</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--string syntax--quoted">'../stored_data/'</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">        </span><span class="syntax--variable syntax--other syntax--object syntax--property">file</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--string syntax--quoted">'filename.js'</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">        </span><span class="syntax--variable syntax--other syntax--object syntax--property">name</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--string syntax--quoted">'modulename'</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">    </span><span class="syntax--variable syntax--other syntax--object syntax--property">set</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly">{</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">        </span><span class="syntax--variable syntax--other syntax--object syntax--property">data</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--meta syntax--class">An_Literal_Object_Data</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">    </span><span class="syntax--variable syntax--other syntax--object syntax--property">merge</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--constant syntax--language syntax--boolean syntax--true">true</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="leading-whitespace">    </span><span class="syntax--variable syntax--other syntax--object syntax--property">replicate</span><span class="syntax--keyword syntax--operator syntax--js">:</span> <span class="syntax--constant syntax--language syntax--boolean syntax--false">false</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly">}</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--constant syntax--other">LIT</span><span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">setDataLit</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--constant syntax--other">CONF_DATALIT</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ Invocando el método getComponent con su</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ único parámetro obligatorio.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--constant syntax--other">LIT</span><span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">getComponent</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--string syntax--quoted">'target'</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ Invocando el método getComponent con su</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ parámetro obligatorio y el Objeto de configuración.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ para procesarlo antes de devolverlo.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--constant syntax--other">LIT</span><span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">getComponent</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--string syntax--quoted">'target'</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span> <span class="syntax--constant syntax--other">PROCESS_CONF</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">/*</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ Invocando el método getModule con todos</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">+ sus parámetros.</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--comment syntax--block">*/</span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--constant syntax--other">LIT</span><span class="syntax--meta syntax--delimiter syntax--period">.</span><span class="syntax--entity syntax--name syntax--function">getModule</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round">(</span><span class="syntax--string syntax--quoted">'target'</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span> <span class="syntax--string syntax--quoted">'name_module'</span><span class="syntax--meta syntax--delimiter syntax--comma">,</span> <span class="syntax--constant syntax--other">PROCESS_CONF</span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round">)</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon">;</span></span></div></pre></div>
                                   </div>
                               </div>
-                          </div>
                         </div>
                         <div class="space-y-12" id="considerations">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
@@ -1565,7 +1580,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-herbs text-base font-medium">Manejo de la asincron&iacute;a</h3>
+                                      <h3 class="text-herbs text-base font-medium noSearch">Manejo de la asincron&iacute;a</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p><i class="text-periblue">Exceptuando el Constuctor de Lit</i>, los restantes cinco m&eacute;todos que hemos visto a lo largo del cap&iacute;tulo soportan la asincron&iacute;a.</p>
                                         <p>Por lo tanto, se puede utilizar <i class="text-periblue">then() y catch()</i>&nbsp; para manejar la respuesta en llamadas directas a los mismos.</p>
@@ -1596,7 +1611,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-herbs text-base font-medium">Pueden acoplarse</h3>
+                                      <h3 class="text-herbs text-base font-medium noSearch">Pueden acoplarse</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p>Esto significa que, los m&eacute;todos pueden trabajar dentro de otras funciones o estructuras JavaScript que haya definido el usuario.</p>
                                         <p><i class="text-periblue">Lo &uacute;nico que se debe tener en cuenta, es que el m&oacute;dulo Lit est&eacute; disponible para los scopes donde se van a utilizar sus m&eacute;todos</i>.</p>
@@ -1628,7 +1643,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-oyster text-base font-medium">Funciones definidas por el usuario</h3>
+                                      <h3 class="text-oyster text-base font-medium noSearch">Funciones definidas por el usuario</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p><i>Dynamo</i> no cuenta, a&uacute;n, con la posibilidad de definir funciones propiamente dichas por parte del usuario en su interface.</p>
                                         <p>Sin embargo, dicha caracter&iacute;stica est&aacute; planificada para ser agregada en pr&oacute;ximas versiones. Podemos adelantar que su concepto es una conjunci&oacute;n de los <i class="text-periblue">Stored Procedures</i> en SQL y los <i class="text-periblue">Schemas</i> que se utilizan para trabajar con MongoDB. Adem&aacute;s de agregar la capacidad para el tipado est&aacute;tico.</p>
@@ -1641,7 +1656,7 @@
                           </div>
                         </div>
                         <div class="space-y-12" id="contact">
-                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group noSearch">
                               <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                                 Contacto
                                 <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1653,144 +1668,145 @@
                                 </svg>
                               </a>
                             </h2>
-                          <form class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full">
-                              <input type="hidden" name="about" value="" required>
-                              <div>
-                                <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
-                                  <button
-                                    @click="open = !open"
-                                    class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
-                                  >
-                                    <span>Asunto del mensaje</span>
-                                    <svg
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                      :class="{'rotate-180': open, 'rotate-0': !open}"
-                                      class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
+                            <form id="frm-contact" class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full" action="" method="post" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="subject" id="subject" required>
+                                <div>
+                                  <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
+                                    <button
+                                      @click="open = !open"
+                                      class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
                                     >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      ></path>
-                                    </svg>
-                                  </button>
-                                  <div
-                                    x-show="open"
-                                    x-transition:enter="transition ease-out duration-100"
-                                    x-transition:enter-start="transform opacity-0 scale-95"
-                                    x-transition:enter-end="transform opacity-100 scale-100"
-                                    x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 scale-100"
-                                    x-transition:leave-end="transform opacity-0 scale-95"
-                                    class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
-                                  >
-                                    <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >About</a
+                                      <span>Asunto del mensaje</span>
+                                      <svg
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
                                       >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Contact</a
-                                      >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Support</a
-                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                          clip-rule="evenodd"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                    <div
+                                      x-show="open"
+                                      x-transition:enter="transition ease-out duration-100"
+                                      x-transition:enter-start="transform opacity-0 scale-95"
+                                      x-transition:enter-end="transform opacity-100 scale-100"
+                                      x-transition:leave="transition ease-in duration-75"
+                                      x-transition:leave-start="transform opacity-100 scale-100"
+                                      x-transition:leave-end="transform opacity-0 scale-95"
+                                      class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
+                                    >
+                                      <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Colaborar"
+                                          >Colaborar</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Informar Problema"
+                                          >Informar Problema</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Consulta"
+                                          >Consulta</a
+                                        >
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Nombre *</label
+                                <div>
+                                    <input type="hidden" name="subject" id="subject" value="">
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Nombre..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Nombre *</label
+                                    >
+                                    <input
+                                      type="text"
+                                      name="name"
+                                      id="name"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
+                                      placeholder="Nombre..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Email *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Email..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Email *</label
+                                    >
+                                    <input
+                                      type="email"
+                                      name="email"
+                                      id="email"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                      placeholder="Email válido..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Mensaje *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
                                   >
-                                  <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje..."></textarea>
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Mensaje *</label
+                                    >
+                                    <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje entre 20 y 500 caracteres..." minlength="20" maxlength="500" required></textarea>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="text-center w-full">
-                                <button type="button" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
-                                  <!--<svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  >
-                                    <path
+                                <div class="text-center w-full">
+                                  <button type="submit" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
+                                    <!--<svg xmlns="http://www.w3.org/2000/svg"
+                                      class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      fill="none"
                                       stroke-linecap="round"
                                       stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                    />
-                                  </svg>-->
-                                  Enviar
-                                  <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
-                              </button>
-                              </div>
-                            <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
-                              <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
-                              eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
-                              egestas sagittis quisque orci.
-                            </p>
-                          </div>-->
-                      </form>
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                      />
+                                    </svg>-->
+                                    Enviar
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
+                                </button>
+                                </div>
+                              <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
+                                <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
+                                eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
+                                egestas sagittis quisque orci.
+                              </p>
+                            </div>-->
+                        </form>
                         <div>
                           <h6 class="text-sm font-normal underline text-comet dark:text-manatee hover:text-oyster">
                             <a href="https://github.com/LitGirl/lit/issues" target="_blank">Reportar errores del sitio en GitHub </a>
@@ -1955,6 +1971,7 @@
       </a>
     </div>
     <script type="text/javascript" src="../js/app.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ"></script>
+    <script type="text/javascript" src="../js/userinputs.min.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ" async defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <script>

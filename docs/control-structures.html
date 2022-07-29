@@ -266,7 +266,7 @@
                 <div class="flex justify-between h-16">
                   <div class="flex items-center justify-center flex-1 px-2 space-x-8 lg:ml-6 lg:justify-end">
                     <div class="w-full max-w-lg lg:max-w-xs">
-                      <label for="search" class="sr-only">Search</label>
+                      <label for="search" class="sr-only">Filter</label>
                       <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                           <!-- Heroicon name: solid/search -->
@@ -282,7 +282,7 @@
                           id="search"
                           name="search"
                           class="block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md text-mana border-smoke dark:bg-tuna placeholder-santa focus:outline-none focus:placeholder-oyster focus:ring-1 focus:ring-oyster focus:border-oyster sm:text-sm dark:border-river"
-                          placeholder="Search"
+                          placeholder="Filter sections..."
                           type="search"
                         />
                       </div>
@@ -680,12 +680,17 @@
                 </div>
               </section>
               <section class="pt-6 pb-24 bg-white dark:bg-tuna">
+                  <div id="no-results" class="px-4 mx-auto sm:px-6 md:px-32" style="display: none">
+                      <h2 class="text-lg font-normal text-brink lg:text-2xl group noSearch">
+                          No encontramos resultados...
+                      </h2>
+                  </div>
                 <div class="px-4 mx-auto sm:px-6 md:px-32">
                   <!-- Replace with your content -->
                   <section>
                     <div class="max-w-3xl">
                       <div class="mx-auto space-y-24 text-lg text-left">
-                        <div class="space-y-8">
+                        <div id="hiddable" class="space-y-8">
                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg md:mt-5 md:text-xl">
                             Como sabemos, las estructuras de control son las encargadas de representar cierta inteligencia para tomar decisiones por parte de un algoritmo. Este es el principal aporte que realiza el lenguaje <i>Dynamo</i> para potenciar el alcance del compilador de <i>Lit</i>. Las tres estructuras de control que maneja <i>Dynamo</i> son tres: Condicionales, Bucles y Rangos. A continuaci&oacute;n abordaremos las particularidades y utilizaci&oacute;n de cada una de ellas.
                           </p>
@@ -720,7 +725,8 @@
                           </div>
                         </div>
 
-                        <div class="space-y-12" id="statements">
+                    <div class="space-y-12" id="statements">
+                        <div class="space-y-6">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                               Declaraci&oacute;nes de bloque
@@ -756,7 +762,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Sobre las declaraciones</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Sobre las declaraciones</h3>
                                         <div class="text-santa mt-2 text-sm">
                                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Es importante recordar que todos los ejemplos que ver&aacute;s a continuaci&oacute;n, corresponden a la versi&oacute;n actual de <i>Lit</i> y <i>Dynamo</i> que es Alfa 0.0.1. Ten presente que al tratarse de un primer prototipo funcional, las estructuras pueden cambiar sensiblemente en el futuro cercano.</p>
                                         </div>
@@ -767,6 +773,9 @@
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                               Las <i>Declaraciones de bloque</i> y <i>Flujo de bloque</i> son una serie de caracteres especiales que le indican al compilador de <i>Dynamo</i> que lo que se encuentra dentro de los mismos son instrucciones de c&oacute;digo para ser evaluadas.
                             </p>
+                            </div>
+                        </div>
+                            <div class="space-y-6">
                             <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                               <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                                 Consideraciones previas
@@ -799,21 +808,24 @@
                             </p>
                           </div>
                           <div class="space-y-6">
-                              <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
-                                <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
-                                  Declarar los bloques
-                                  <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                      fill="currentColor"
-                                      d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
-                                    />
-                                  </svg>
-                                </a>
-                              </h3>
-                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                                Las declaraciones de bloque se componen de una "etiqueta" de apertura y una "etiqueta" de cierre. El compilador de <i>Dynamo</i> solo se enfocar&aacute; en lo que se encuentre dentro de las mismas e ignorar&aacute; lo dem&aacute;s. De momento,  por simplicidad, <i>Dynamo</i> no cuenta con comentarios propios. Si necesitas dejar comentarios en el c&oacute;digo para el futuro o para gu&iacute;a de tu equipo, puedes hacerlo fuera de las <i>Estructuras de bloque</i> usando los comentarios HTML normales. Quizas, agregando alguna convenci&oacute;n para distinguir a simple vista que hace referencia a <i>Dynamo</i>.
-                              </p>
+                              <div class="space-y-6">
+                                  <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
+                                    <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
+                                      Declarar los bloques
+                                      <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                          fill="currentColor"
+                                          d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                                        />
+                                      </svg>
+                                    </a>
+                                  </h3>
+                                  <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                    Las declaraciones de bloque se componen de una "etiqueta" de apertura y una "etiqueta" de cierre. El compilador de <i>Dynamo</i> solo se enfocar&aacute; en lo que se encuentre dentro de las mismas e ignorar&aacute; lo dem&aacute;s. De momento,  por simplicidad, <i>Dynamo</i> no cuenta con comentarios propios. Si necesitas dejar comentarios en el c&oacute;digo para el futuro o para gu&iacute;a de tu equipo, puedes hacerlo fuera de las <i>Estructuras de bloque</i> usando los comentarios HTML normales. Quizas, agregando alguna convenci&oacute;n para distinguir a simple vista que hace referencia a <i>Dynamo</i>.
+                                  </p>
+                              </div>
+                             <div class="space-y-6">
                               <h3 id="tags-statements" class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                                 <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                                   Etiquetas
@@ -838,9 +850,11 @@
                               <div class="space-y-6">
                                   <div class='markdown-preview block leading-5 bg-white border rounded-md border-smoke dark:bg-tuna placeholder-santa sm:text-sm dark:border-river'><pre class="editor-colors lang-html"><div class="line"><span class="syntax--source syntax--html"><span class="syntax--meta syntax--tag syntax--doctype syntax--html">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">html</span> <span class="syntax--entity syntax--other syntax--attribute-name">lang</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">en</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">script</span> <span class="syntax--entity syntax--other syntax--attribute-name">src</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">path/to/litgirl/index.js</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">utf-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">type</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">module</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">async</span> <span class="syntax--entity syntax--other syntax--attribute-name">defer</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">script</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">charset</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">UTF-8</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">name</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">viewport</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">width=device-width, initial-scale=1.0</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">meta</span> <span class="syntax--entity syntax--other syntax--attribute-name">http-equiv</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">X-UA-Compatible</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span> <span class="syntax--entity syntax--other syntax--attribute-name">content</span><span class="syntax--punctuation syntax--separator syntax--key-value syntax--html">=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--begin">"</span><span class="syntax--string syntax--html">ie=edge</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end">"</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span>Control Structures<span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">title</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">head</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- [Dyn]: Esto es un posible ejemplo de comentario [/Dyn] --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>{{&gt;&gt;</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span>//Código Dynamo</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span>&gt;&gt;}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">section</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">            </span><span class="syntax--comment syntax--block syntax--html">&lt;!-- Este contenido HTML se mantiene inalterado --&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">div</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;</span><span class="syntax--entity syntax--name syntax--tag">ul</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">            </span>{{&gt;&gt;</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">                </span>//Código Dynamo</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">            </span>&gt;&gt;}}</span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">        </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">ul</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="leading-whitespace">    </span><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">section</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">body</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div><div class="line"></div><div class="line"><span class="syntax--source syntax--html"><span class="syntax--punctuation syntax--definition syntax--tag syntax--begin">&lt;/</span><span class="syntax--entity syntax--name syntax--tag">html</span><span class="syntax--punctuation syntax--definition syntax--tag syntax--end">&gt;</span></span></div></pre></div>
                               </div>
+                              </div>
                           </div>
                         </div>
                         <div class="space-y-12" id="conditionals">
+                        <div class="space-y-6">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                               Condicionales
@@ -853,10 +867,11 @@
                               </svg>
                             </a>
                           </h2>
-                          <div class="space-y-6">
                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                               Los condicionales en <i>Dynamo</i> (al igual que en todos los lenguajes de programaci&oacute;n), permiten que nuestro c&oacute;digo tome decisiones en base a si una o m&aacute;s condiciones se cumplen. En la versi&oacute;n actual de <i>Dynamo</i>, la estructura condicional que ofrece es una interpreta&oacute;n propia del tradicional <i>if - else</i>. A continuaci&oacute;n veremos algunos ejemplos de la sintaxis y la forma de agregar condicionales de <i>Dynamo</i> en los templates de <i>LitGirl</i>.
                             </p>
+                        </div>
+                        <div class="space-y-6">
                             <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                               <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                                 Estructura If - Else If - Else
@@ -931,7 +946,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-oyster text-base font-medium">Sobre los ()</h3>
+                                      <h3 class="text-oyster text-base font-medium noSearch">Sobre los ()</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p>Si bien el uso de los () es admitido, no es algo requerido. Como ya hemos mencionado, la idea detr&aacute;s de <i>Dynamo</i> es hacer lo m&aacute;s posible con lo m&iacute;nimo posible. En el ejemplo anterior los hemos utilizado para mejorar la legibilidad y no por otra raz&oacute;n. Sin ellos el c&oacute;digo continuar&iacute;a funcionando como se espera.</p>
                                       </div>
@@ -939,6 +954,7 @@
                                   </div>
                                 </div>
                             </div>
+                        </div>
                             <div class="space-y-6">
                                 <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                                   <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
@@ -981,7 +997,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-oyster text-base font-medium">Sobre los &iacute;ndices</h3>
+                                          <h3 class="text-oyster text-base font-medium noSearch">Sobre los &iacute;ndices</h3>
                                           <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>Como puedes observar en la salida del segundo condicional, existen dos referencia parecidas a esta <strong class="text-periblue">storage.menu.X</strong>. Esto le indica a <i>Dynamo</i> que en el objeto <i>storage</i> existe una propiedad <i>menu</i> (la cual es un array), y que debe obtener el valor del indice indicado por el n&uacute;mero luego del &uacute;ltimo punto. Al contrario de lo que es habitual en muchos lenguajes donde el &iacute;ndice se debe pasar dentro de corchetes <i>[]</i>, en <i>Dynamo</i> no es necesario, se pasa como si fuera una propiedad.</p>
                                           </div>
@@ -1034,7 +1050,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-pumpikin text-base font-medium">Advertencia</h3>
+                                          <h3 class="text-pumpikin text-base font-medium noSearch">Advertencia</h3>
                                           <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                               <p>El uso de </i><strong class="text-periblue">Variables de transpilaci&oacute;n</strong> y de <strong class="text-periblue">Constantes de compaginaci&oacute;n</strong> dentro de condicionales, bucles y rangos no es totalmente estable. Si bien, lo ser&aacute;n en pr&oacute;ximas versiones del compilador, de momento, desaconsejamos su uso en los contextos mencionados.
                                               </p>
@@ -1066,7 +1082,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-oyster text-base font-medium">¡Una peque&ntilde;a sorpresa!</h3>
+                                          <h3 class="text-oyster text-base font-medium noSearch">¡Una peque&ntilde;a sorpresa!</h3>
                                           <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>Si has prestado atenci&oacute;n al &uacute;ltimo ejemplo, habr&aacute;s notado que dentro de algunos condiconales accedemos a API's JavaScript del Navegador como son: <strong class="text-periblue">localStorage</strong> y <strong class="text-periblue">document.referrer</strong>. Si bien, a&uacute;n est&aacute; en etapa de evaluaci&oacute;n su comportamiento, <i>Dynamo</i> ya cuenta con esta capacidad integrada en su especificaci&oacute;n. Te recomendamos ver la secci&oacute;n de <a href="./apis-dynamo.html" class="underline text-oyster hover:text-comet dark:text-manatee">API's Admitidas</a> para mayor informaci&oacute;n.
                                             <br>
@@ -1078,9 +1094,9 @@
                                     </div>
                                 </div>
                             </div>
-                          </div>
                         </div>
                         <div class="space-y-12" id="loops">
+                        <div class="space-y-6">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                             <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                               Bucles y Rangos
@@ -1109,6 +1125,8 @@
                                 <br>
                                 2.- <strong><i class="text-periblue">Enf&oacute;cate en lo que quieres hacer, no con qu&eacute; lo pretendes hacer</i></strong>&nbsp; Desde esta perspectiva, no tiene mucho sentido tener m&uacute;ltiples iteradores con comportamientos diferentes. El iterador <i>role</i> es polim&oacute;rfico, se adapta y transforma de acuerdo a los argumentos que reciba. T&uacute; le indicas el/los dato/s que te interesa recuperar en cada iteraci&oacute;n, y dejas a <i>role</i> decidir la forma m&aacute;s eficiente de hacerlo.
                             </p>
+                        </div>
+                        </div>
                             <div class="space-y-6">
                                 <h3 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-xl group">
                                   <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
@@ -1261,7 +1279,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-pumpikin text-base font-medium">Cuidado con el filtrado multiobjeto</h3>
+                                          <h3 class="text-pumpikin text-base font-medium noSearch">Cuidado con el filtrado multiobjeto</h3>
                                           <div class="text-santa mt-2 text-sm">
                                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">En el segundo ejemplo hemos realizado un filtrado multiobjeto y luego comparado resultados de uno y otro simult&aacute;neamente. Esta funcionalidad ha presentado inestabilidades que estamos solucionando. Util&iacute;zala con precauci&oacute;n o busca alternativas en tanto resolvemos el bug.</p>
                                           </div>
@@ -1298,38 +1316,7 @@
                                         2.- <strong><i class="text-periblue">..</i></strong>&nbsp; Operador de <i>role</i> para indicarle que ejecute un rango entre el valor anterior y el posterior. <i class="text-periblue">* Ambas posiciones de inicio y final ser&aacute;n incluidas en la iteraci&oacute;n</i>.
                                     </p>
                                 </div>
-                                <div class="space-y-4">
-                                    <div class="rounded-md border-smoke dark:bg-tuna dark:border-comet p-4 bg-white border">
-                                      <div class="flex">
-                                        <div class="flex-shrink-0">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler text-warning icon-tabler-alert-triangle text-pumpikin"
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 24 24"
-                                            stroke-width="1.5"
-                                            stroke="currentColor"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          >
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                            <path d="M12 9v2m0 4v.01"></path>
-                                            <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"></path>
-                                          </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                          <h3 class="text-pumpikin text-base font-medium">Cuidado con el filtrado multiobjeto</h3>
-                                          <div class="text-santa mt-2 text-sm">
-                                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">En el segundo ejemplo hemos realizado un filtrado multiobjeto y luego comparado resultados de uno y otro simult&aacute;neamente. Esta funcionalidad  ha presentado inestabilidades que estamos solucionando. Util&iacute;zala con precauci&oacute;n o busca alternativas en tanto resolvemos el bug.</p>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
                             </div>
-                          </div>
                         </div>
                         <div class="space-y-12" id="considerations">
                           <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
@@ -1370,7 +1357,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-herbs text-base font-medium">Protecci&oacute;n de emparejamiento nulo</h3>
+                                      <h3 class="text-herbs text-base font-medium noSearch">Protecci&oacute;n de emparejamiento nulo</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p>Esto significa que en las iteraciones multiobjeto, siempre prevalece como longitud m&aacute;xima la que pertenece al objeto con menos elementos.</p>
                                         <p>Por ejemplo: Suponiendo que has declarado un rango <i class="text-periblue">0 .. 6</i> sobre dos objetos distintos y uno de ellos s&oacute;lo contiene cinco elementos, <i>role</i> asumir&aacute; el final del <i>rango</i> cuando llegue al &uacute;ltimo elemento del objeto con menor longitud. Ser&iacute;a como si hubieras declarado el rango de esta forma <i class="text-periblue">0 .. 4</i>. Esto se aplica a todo tipo de bucles, no solamente al <i>rango</i>.</p>
@@ -1401,7 +1388,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-herbs text-base font-medium">Protecci&oacute;n de &iacute;ndice nulo</h3>
+                                      <h3 class="text-herbs text-base font-medium noSearch">Protecci&oacute;n de &iacute;ndice nulo</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p>Esto significa que en las iteraciones, sobre todo en las de fitrado, <i>role</i> ignorar&aacute; los &iacute;ndices que no existan.</p>
                                         <p>Por ejemplo: Suponiendo que has declarado un filtro como este <i class="text-periblue">[prod1, prod4, prod7]</i>. Asumiendo que <i class="text-periblue">prod4</i> no existe, lo saltar&aacute; y continuar&aacute; con el siguiente si lo hubiera.</p>
@@ -1433,7 +1420,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-pumpikin text-base font-medium">S&iacute; se devuelven valores 'null' </h3>
+                                      <h3 class="text-pumpikin text-base font-medium noSearch">S&iacute; se devuelven valores 'null' </h3>
                                       <div class="text-santa mt-2 text-sm">
                                         <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">Si bien <i>Dynamo</i> protege de errores de &iacute;ndice <i>null</i> o <i>undefined</i>, no significa que no devuelva valores de dichos tipos.</p>
                                         <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">En el caso de que un &iacute;ndice exista en un elemento y su <i class="text-periblue">valor sea igual a 'null' o 'undefined'</i> entonces s&iacute; lo tomar&aacute; como una salida v&aacutelida. Ya que asume que no se trata de un error de programaci&oacute;n sino de algo deliberado.</p>
@@ -1465,7 +1452,7 @@
                                       </svg>
                                     </div>
                                     <div class="ml-3">
-                                      <h3 class="text-oyster text-base font-medium">Funciones definidas por el usuario</h3>
+                                      <h3 class="text-oyster text-base font-medium noSearch">Funciones definidas por el usuario</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p><i>Dynamo</i> no cuenta, a&uacute;n, con la posibilidad de definir funciones propiamente dichas por parte del usuario en su interface.</p>
                                         <p>Sin embargo, dicha caracter&iacute;stica est&aacute; planificada para ser agregada en pr&oacute;ximas versiones. Podemos adelantar que su concepto es una conjunci&oacute;n de los <i class="text-periblue">Stored Procedures</i> en SQL y los <i class="text-periblue">Schemas</i> que se utilizan para trabajar con MongoDB. Adem&aacute;s de agregar la capacidad para el tipado est&aacute;tico.</p>
@@ -1505,7 +1492,7 @@
                         </div>
 
                         <div class="space-y-12" id="contact">
-                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group noSearch">
                               <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                                 Contacto
                                 <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1517,144 +1504,145 @@
                                 </svg>
                               </a>
                             </h2>
-                          <form class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full">
-                              <input type="hidden" name="about" value="" required>
-                              <div>
-                                <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
-                                  <button
-                                    @click="open = !open"
-                                    class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
-                                  >
-                                    <span>Asunto del mensaje</span>
-                                    <svg
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                      :class="{'rotate-180': open, 'rotate-0': !open}"
-                                      class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
+                            <form id="frm-contact" class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full" action="" method="post" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="subject" id="subject" required>
+                                <div>
+                                  <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
+                                    <button
+                                      @click="open = !open"
+                                      class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
                                     >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      ></path>
-                                    </svg>
-                                  </button>
-                                  <div
-                                    x-show="open"
-                                    x-transition:enter="transition ease-out duration-100"
-                                    x-transition:enter-start="transform opacity-0 scale-95"
-                                    x-transition:enter-end="transform opacity-100 scale-100"
-                                    x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 scale-100"
-                                    x-transition:leave-end="transform opacity-0 scale-95"
-                                    class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
-                                  >
-                                    <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >About</a
+                                      <span>Asunto del mensaje</span>
+                                      <svg
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
                                       >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Contact</a
-                                      >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Support</a
-                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                          clip-rule="evenodd"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                    <div
+                                      x-show="open"
+                                      x-transition:enter="transition ease-out duration-100"
+                                      x-transition:enter-start="transform opacity-0 scale-95"
+                                      x-transition:enter-end="transform opacity-100 scale-100"
+                                      x-transition:leave="transition ease-in duration-75"
+                                      x-transition:leave-start="transform opacity-100 scale-100"
+                                      x-transition:leave-end="transform opacity-0 scale-95"
+                                      class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
+                                    >
+                                      <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Colaborar"
+                                          >Colaborar</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Informar Problema"
+                                          >Informar Problema</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Consulta"
+                                          >Consulta</a
+                                        >
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Nombre *</label
+                                <div>
+                                    <input type="hidden" name="subject" id="subject" value="">
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Nombre..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Nombre *</label
+                                    >
+                                    <input
+                                      type="text"
+                                      name="name"
+                                      id="name"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
+                                      placeholder="Nombre..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Email *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Email..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Email *</label
+                                    >
+                                    <input
+                                      type="email"
+                                      name="email"
+                                      id="email"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                      placeholder="Email válido..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Mensaje *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
                                   >
-                                  <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje..."></textarea>
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Mensaje *</label
+                                    >
+                                    <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje entre 20 y 500 caracteres..." minlength="20" maxlength="500" required></textarea>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="text-center w-full">
-                                <button type="button" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
-                                  <!--<svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  >
-                                    <path
+                                <div class="text-center w-full">
+                                  <button type="submit" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
+                                    <!--<svg xmlns="http://www.w3.org/2000/svg"
+                                      class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      fill="none"
                                       stroke-linecap="round"
                                       stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                    />
-                                  </svg>-->
-                                  Enviar
-                                  <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
-                              </button>
-                              </div>
-                            <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
-                              <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
-                              eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
-                              egestas sagittis quisque orci.
-                            </p>
-                          </div>-->
-                      </form>
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                      />
+                                    </svg>-->
+                                    Enviar
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
+                                </button>
+                                </div>
+                              <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
+                                <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
+                                eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
+                                egestas sagittis quisque orci.
+                              </p>
+                            </div>-->
+                        </form>
                         <div>
                           <h6 class="text-sm font-normal underline text-comet dark:text-manatee hover:text-oyster">
                             <a href="https://github.com/LitGirl/lit/issues" target="_blank">Reportar errores del sitio en GitHub </a>
@@ -1819,6 +1807,7 @@
       </a>
     </div>
     <script type="text/javascript" src="../js/app.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ"></script>
+    <script type="text/javascript" src="../js/userinputs.min.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ" async defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <script>

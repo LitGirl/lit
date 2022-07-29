@@ -265,7 +265,7 @@
                 <div class="flex justify-between h-16">
                   <div class="flex items-center justify-center flex-1 px-2 space-x-8 lg:ml-6 lg:justify-end">
                     <div class="w-full max-w-lg lg:max-w-xs">
-                      <label for="search" class="sr-only">Search</label>
+                      <label for="search" class="sr-only">Filter</label>
                       <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                           <!-- Heroicon name: solid/search -->
@@ -281,7 +281,7 @@
                           id="search"
                           name="search"
                           class="block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md text-mana border-smoke dark:bg-tuna placeholder-santa focus:outline-none focus:placeholder-oyster focus:ring-1 focus:ring-oyster focus:border-oyster sm:text-sm dark:border-river"
-                          placeholder="Search"
+                          placeholder="Filter sections..."
                           type="search"
                         />
                       </div>
@@ -603,12 +603,17 @@
                 </div>
               </section>
               <section class="pt-6 pb-24 bg-white dark:bg-tuna">
+                  <div id="no-results" class="px-4 mx-auto sm:px-6 md:px-32" style="display: none">
+                      <h2 class="text-lg font-normal text-brink lg:text-2xl group noSearch">
+                          No encontramos resultados...
+                      </h2>
+                  </div>
                 <div class="px-4 mx-auto sm:px-6 md:px-32">
                   <!-- Replace with your content -->
                   <section>
                     <div class="max-w-3xl">
                       <div class="mx-auto space-y-24 text-lg text-left">
-                        <div class="space-y-8">
+                        <div id="hiddable" class="space-y-8">
                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg md:mt-5 md:text-xl">
                             En esta p&aacute;gina puedes encontrar algunas sugerencias y precauciones que deber&iacute;as tomar al momento de utilizar LitGirl y sus caracter&iacute;sticas integradas. No son demasiadas, pero s&iacute; muy importantes para no tener una mala experiencia con una versi&oacute;n tan temprana.
                           </p>
@@ -757,7 +762,7 @@
                           </div>
                         </div>
                         <div class="space-y-12" id="contact">
-                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group noSearch">
                               <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                                 Contacto
                                 <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -769,144 +774,145 @@
                                 </svg>
                               </a>
                             </h2>
-                          <form class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full">
-                              <input type="hidden" name="about" value="" required>
-                              <div>
-                                <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
-                                  <button
-                                    @click="open = !open"
-                                    class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
-                                  >
-                                    <span>Asunto del mensaje</span>
-                                    <svg
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                      :class="{'rotate-180': open, 'rotate-0': !open}"
-                                      class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
+                            <form id="frm-contact" class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full" action="" method="post" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="subject" id="subject" required>
+                                <div>
+                                  <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
+                                    <button
+                                      @click="open = !open"
+                                      class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
                                     >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      ></path>
-                                    </svg>
-                                  </button>
-                                  <div
-                                    x-show="open"
-                                    x-transition:enter="transition ease-out duration-100"
-                                    x-transition:enter-start="transform opacity-0 scale-95"
-                                    x-transition:enter-end="transform opacity-100 scale-100"
-                                    x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 scale-100"
-                                    x-transition:leave-end="transform opacity-0 scale-95"
-                                    class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
-                                  >
-                                    <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >About</a
+                                      <span>Asunto del mensaje</span>
+                                      <svg
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
                                       >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Contact</a
-                                      >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Support</a
-                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                          clip-rule="evenodd"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                    <div
+                                      x-show="open"
+                                      x-transition:enter="transition ease-out duration-100"
+                                      x-transition:enter-start="transform opacity-0 scale-95"
+                                      x-transition:enter-end="transform opacity-100 scale-100"
+                                      x-transition:leave="transition ease-in duration-75"
+                                      x-transition:leave-start="transform opacity-100 scale-100"
+                                      x-transition:leave-end="transform opacity-0 scale-95"
+                                      class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
+                                    >
+                                      <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Colaborar"
+                                          >Colaborar</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Informar Problema"
+                                          >Informar Problema</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Consulta"
+                                          >Consulta</a
+                                        >
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Nombre *</label
+                                <div>
+                                    <input type="hidden" name="subject" id="subject" value="">
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Nombre..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Nombre *</label
+                                    >
+                                    <input
+                                      type="text"
+                                      name="name"
+                                      id="name"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
+                                      placeholder="Nombre..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Email *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Email..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Email *</label
+                                    >
+                                    <input
+                                      type="email"
+                                      name="email"
+                                      id="email"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                      placeholder="Email válido..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Mensaje *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
                                   >
-                                  <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje..." required></textarea>
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Mensaje *</label
+                                    >
+                                    <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje entre 20 y 500 caracteres..." minlength="20" maxlength="500" required></textarea>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="text-center w-full">
-                                <button type="button" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
-                                  <!--<svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  >
-                                    <path
+                                <div class="text-center w-full">
+                                  <button type="submit" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
+                                    <!--<svg xmlns="http://www.w3.org/2000/svg"
+                                      class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      fill="none"
                                       stroke-linecap="round"
                                       stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                    />
-                                  </svg>-->
-                                  Enviar
-                                  <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
-                              </button>
-                              </div>
-                            <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
-                              <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
-                              eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
-                              egestas sagittis quisque orci.
-                            </p>
-                          </div>-->
-                      </form>
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                      />
+                                    </svg>-->
+                                    Enviar
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
+                                </button>
+                                </div>
+                              <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
+                                <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
+                                eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
+                                egestas sagittis quisque orci.
+                              </p>
+                            </div>-->
+                        </form>
                         <div>
                           <h6 class="text-sm font-normal underline text-comet dark:text-manatee hover:text-oyster">
                             <a href="https://github.com/LitGirl/lit/issues" target="_blank">Reportar errores del sitio en GitHub </a>
@@ -1070,6 +1076,7 @@
       </a>
     </div>
     <script type="text/javascript" src="../js/app.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ"></script>
+    <script type="text/javascript" src="../js/userinputs.min.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ" async defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <script>

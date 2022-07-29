@@ -266,7 +266,7 @@
                 <div class="flex justify-between h-16">
                   <div class="flex items-center justify-center flex-1 px-2 space-x-8 lg:ml-6 lg:justify-end">
                     <div class="w-full max-w-lg lg:max-w-xs">
-                      <label for="search" class="sr-only">Search</label>
+                      <label for="search" class="sr-only">Filter</label>
                       <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                           <!-- Heroicon name: solid/search -->
@@ -282,7 +282,7 @@
                           id="search"
                           name="search"
                           class="block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md text-mana border-smoke dark:bg-tuna placeholder-santa focus:outline-none focus:placeholder-oyster focus:ring-1 focus:ring-oyster focus:border-oyster sm:text-sm dark:border-river"
-                          placeholder="Search"
+                          placeholder="Filter sections..."
                           type="search"
                         />
                       </div>
@@ -680,12 +680,17 @@
                 </div>
               </section>
               <section class="pt-6 pb-24 bg-white dark:bg-tuna">
+                  <div id="no-results" class="px-4 mx-auto sm:px-6 md:px-32" style="display: none">
+                      <h2 class="text-lg font-normal text-brink lg:text-2xl group noSearch">
+                          No encontramos resultados...
+                      </h2>
+                  </div>
                 <div class="px-4 mx-auto sm:px-6 md:px-32">
                   <!-- Replace with your content -->
                   <section>
                     <div class="max-w-3xl">
                       <div class="mx-auto space-y-24 text-lg text-left">
-                        <div class="space-y-8">
+                        <div id="hiddable" class="space-y-8">
                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg md:mt-5 md:text-xl">
                             Los <i>Operadores</i> son una parte esencial en cualquier lenguaje o pseudo-lenguaje orientado a la programaci&oacute;n. A efectos pr&aacute;cticos, y simplificando bastante, podemos dividirlos en cuatro grupos: <i class="text-periblue">L&oacute;gicos, de Comparaci&oacute;n, de Asignaci&oacute;n y Matem&aacute;ticos</i>.
                           </p>
@@ -846,7 +851,7 @@
                                         </svg>
                                       </div>
                                     <div class="ml-3">
-                                      <h3 class="text-oyster text-base font-medium">Importante:</h3>
+                                      <h3 class="text-oyster text-base font-medium noSearch">Importante:</h3>
                                       <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                         <p>Los operadores que veremos a continuaci&oacute;n corresponden a la versi&oacute;n <i>Alfa 0.0.1</i>. Si bien, la manera de procesarlos puede llegar a modificarse, no es de esperar que sufran cambios relevantes con respecto a su uso y la funci&oacute;n que cumplen dentro del lenguaje. Esto incluye a los <i class="text-periblue">Operadores integrados parcialmente y a los que se encuentran en desarrollo</i>.</p>
                                         <p><i class="text-periblue">El orden de precedencia para todos los operadores comunes, se equipara al de la mayor&iacute;a de los lenguajes</i>.</p>
@@ -857,7 +862,7 @@
                             </div>
                           </div>
                         </div>
-
+                        </div>
                         <div class="space-y-12" id="logic-operators">
                             <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
                               <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
@@ -909,7 +914,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-herbs text-base font-medium">Operador AND (&&)</h3>
+                                          <h3 class="text-herbs text-base font-medium noSearch">Operador AND (&&)</h3>
                                           <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>El 'Y' l&oacute;gico, eval&uacute;a dos o m&aacute;s segmentos de condiciones.</p>
                                             <p>Solamente devuelve verdadero (true) si todas ellas se han cumplido. Basta que una falle para que el resultado sea false.</p>
@@ -940,7 +945,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-herbs text-base font-medium">Operador OR (||)</h3>
+                                          <h3 class="text-herbs text-base font-medium noSearch">Operador OR (||)</h3>
                                           <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>El 'O' l&oacute;gico, eval&uacute;a dos o m&aacute;s segmentos de condiciones.</p>
                                             <p>Devuelve verdadero (true) si al menos una de ellas se han cumplido. Basta que una sea vrdadera para que el resultado sea true.</p>
@@ -971,7 +976,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-herbs text-base font-medium">Operador NOT (!)</h3>
+                                          <h3 class="text-herbs text-base font-medium noSearch">Operador NOT (!)</h3>
                                           <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>El 'NOT' l&oacute;gico, eval&uacute;a un segmento o bloque de condici&oacute;n (dependiendo del caso).</p>
                                             <p>Devuelve true si el false es verdadro. En otras palabras y para no enredarnos. Invierte el sentido 'natural' de la condici&oacute;n.</p>
@@ -1002,7 +1007,7 @@
                                           </svg>
                                         </div>
                                         <div class="ml-3">
-                                          <h3 class="text-brink text-base font-medium">Operador XOR (<|>)</h3>
+                                          <h3 class="text-brink text-base font-medium noSearch">Operador XOR (<|>)</h3>
                                           <div class="text-santa mt-2 text-sm">
                                             <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                                 El operador 'XOR' l&oacute;gico se encuentra actualmente en proceso de integraci&oacute;n. Una vez estandarizado en el lenguaje su funci&oacute;n sera definir que una u otra condici&oacute;n en una funci&oacute;n l&oacute;gica se cumpla, pero no ambas. Por ejemplo: si una condici&oacute;n devuelve true y la otra false, entonces 'XOR' devuelve true. Si ambas condiciones fueran true o false, entonces 'XOR' devolver&aacute; false.
@@ -1053,7 +1058,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Igualdad simple (==)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Igualdad simple (==)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '==', eval&uacute;a si dos valores son equiparables, aunque sean un tipo de dato distinto.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado true</i>.</p>
@@ -1084,7 +1089,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Igualdad estricta (===)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Igualdad estricta (===)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '===', eval&uacute;a si dos valores son <i class="text-periblue">exactamente iguales</i>, esto incluye que sean el mismo tipo de dato.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado false</i>.</p>
@@ -1115,7 +1120,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Diferencia simple (!=)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Diferencia simple (!=)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '!=', eval&uacute;a si dos valores son diferentes o no equiparables, sin tomar en cuenta el tipo de dato.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado false</i>.</p>
@@ -1146,7 +1151,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Diferencia estrita (!==)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Diferencia estrita (!==)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '!==', eval&uacute;a si dos valores son estrictamente diferentes, incluyendo el tipo de dato de cada uno.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0, '0' y false dar&aacute; como resultado true</i>.</p>
@@ -1177,7 +1182,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Menor que (<)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Menor que (<)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '<', eval&uacute;a si el valor de la izquierda es menor que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 < 5 devuelve true. Pero comparar 0 < 'Hola' generar&aacute; un error</i>.</p>
@@ -1208,7 +1213,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Mayor que (>)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Mayor que (>)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '>', eval&uacute;a si el valor de la izquierda es mayor que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 > 5 devuelve false. Pero comparar 0 > 'Hola' generar&aacute; un error</i>.</p>
@@ -1239,7 +1244,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Menor o igual que (<=)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Menor o igual que (<=)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '<=', eval&uacute;a si el valor de la izquierda es menor o igual que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 <= 5 devuelve true. Pero comparar 0 <= 'Hola' generar&aacute; un error</i>.</p>
@@ -1270,7 +1275,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-herbs text-base font-medium">Mayor o igual que (>=)</h3>
+                                        <h3 class="text-herbs text-base font-medium noSearch">Mayor o igual que (>=)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                           <p>El operador '>=', eval&uacute;a si el valor de la izquierda es mayor o igual que el de la derecha. Evaluar valores que no sean equiparables, puede causar un error.</p>
                                           <p><i class="text-periblue">Por ejemplo: Una comparaci&oacute;n con este operador para los valores 0 >= 5 devuelve false. Pero comparar 0 >= 'Hola' generar&aacute; un error</i>.</p>
@@ -1301,7 +1306,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-brink text-base font-medium">Equivalente a (<>)</h3>
+                                        <h3 class="text-brink text-base font-medium noSearch">Equivalente a (<>)</h3>
                                         <div class="text-santa mt-2 text-sm">
                                           <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                               El operador '<>', eval&uacute;a si el valor de la izquierda es igual o equivalente al de la derecha. Evaluar valores que no sean equiparables, no causar&aacute; error. Este operador se encuentra a&uacute;n en etapa de desarrollo.
@@ -1354,7 +1359,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador de asignaci&oacute;n simple (=)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador de asignaci&oacute;n simple (=)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '=' operador, asigna el valor que se encuentra a su derecha al objeto que se encuentra a su izquierda.
@@ -1411,7 +1416,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador suma (+)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador suma (+)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '+' operador, adiciona dos valores que sean evaluados compatibles para realizar la operaci&oacute;n.
@@ -1446,7 +1451,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador incremento (++)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador incremento (++)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '++' operador, incrementa en 1 el valor al que se aplica. Si se coloca antes del valor a incrementar (pre-incremento), incrementa antes de evalur el valor inicial. Si se coloca despu&eacute;s del valor a incrementar (post-incremento), realiza el proceso inverso.
@@ -1481,7 +1486,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador resta (-)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador resta (-)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '-' operador, resta dos valores que sean evaluados compatibles para realizar la operaci&oacute;n. Si se coloca delante de un valor num&eacute;rico lo convertir&aacute; a negativo.
@@ -1516,7 +1521,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador decremento (--)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador decremento (--)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '++' operador, decrementa en 1 el valor al que se aplica. Si se coloca antes del valor a decrementar (pre-decremento), decrementa antes de evalur el valor inicial. Si se coloca despu&eacute;s del valor a decrementar (post-decremento), realiza el proceso inverso.
@@ -1551,7 +1556,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador multiplicar (*)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador multiplicar (*)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '*' operador, multiplica dos valores que sean evaluados compatibles para realizar la operaci&oacute;n.
@@ -1586,7 +1591,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador potencia (**)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador potencia (**)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '**' operador, calcula la potencia del valor base a la izquierda por el exponente a la derecha. Por ejemplo: 2**3 dar&aacute; como resultado 8. Bases o potencias negativas deben ir entre par&eacute;ntesis.
@@ -1621,7 +1626,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador dividir (/)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador dividir (/)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '/' operador, divide dos valores que sean evaluados compatibles para realizar la operaci&oacute;n. Utilizar en divisiones entre 0, generar&aacute; un resultado inesperado.
@@ -1656,7 +1661,7 @@
                                         </svg>
                                       </div>
                                       <div class="ml-3">
-                                        <h3 class="text-pumpikin text-base font-medium">Operador m&oacute;dulo (%)</h3>
+                                        <h3 class="text-pumpikin text-base font-medium noSearch">Operador m&oacute;dulo (%)</h3>
                                         <div class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
                                             <p>
                                                 El '%' operador, calcula el resto de una divisi&oacute;n. Por ejemplo: 5 % 2 devolver&aacute; 1 como resultado.
@@ -1675,7 +1680,7 @@
                             </div>
                         </div>
                         <div class="space-y-12" id="contact">
-                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group">
+                            <h2 class="text-lg font-normal text-comet dark:text-manatee hover:text-oyster lg:text-2xl group noSearch">
                               <a href="javascript:void(0);" class="inline-flex items-center gap-4 text-comet dark:text-manatee dark:hover:text-periblue">
                                 Contacto
                                 <svg class="hidden w-6 h-6 group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1687,150 +1692,150 @@
                                 </svg>
                               </a>
                             </h2>
-                          <form class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full">
-                              <input type="hidden" name="about" value="" required>
-                              <div>
-                                <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
-                                  <button
-                                    @click="open = !open"
-                                    class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
-                                  >
-                                    <span>Asunto del mensaje</span>
-                                    <svg
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                      :class="{'rotate-180': open, 'rotate-0': !open}"
-                                      class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
+                            <form id="frm-contact" class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full" action="" method="post" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="subject" id="subject" required>
+                                <div>
+                                  <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
+                                    <button
+                                      @click="open = !open"
+                                      class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
                                     >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      ></path>
-                                    </svg>
-                                  </button>
-                                  <div
-                                    x-show="open"
-                                    x-transition:enter="transition ease-out duration-100"
-                                    x-transition:enter-start="transform opacity-0 scale-95"
-                                    x-transition:enter-end="transform opacity-100 scale-100"
-                                    x-transition:leave="transition ease-in duration-75"
-                                    x-transition:leave-start="transform opacity-100 scale-100"
-                                    x-transition:leave-end="transform opacity-0 scale-95"
-                                    class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
-                                  >
-                                    <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >About</a
+                                      <span>Asunto del mensaje</span>
+                                      <svg
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline w-5 h-5 ml-4 transition-transform duration-200 transform"
                                       >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Contact</a
-                                      >
-                                      <a
-                                        class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                        href="javascript:void(0);"
-                                        >Support</a
-                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                          clip-rule="evenodd"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                    <div
+                                      x-show="open"
+                                      x-transition:enter="transition ease-out duration-100"
+                                      x-transition:enter-start="transform opacity-0 scale-95"
+                                      x-transition:enter-end="transform opacity-100 scale-100"
+                                      x-transition:leave="transition ease-in duration-75"
+                                      x-transition:leave-start="transform opacity-100 scale-100"
+                                      x-transition:leave-end="transform opacity-0 scale-95"
+                                      class="md:w-full absolute z-50 w-full mx-auto mt-2 origin-top-right shadow-lg"
+                                    >
+                                      <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Colaborar"
+                                          >Colaborar</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Informar Problema"
+                                          >Informar Problema</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-subject="Consulta"
+                                          >Consulta</a
+                                        >
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Nombre *</label
+                                <div>
+                                    <input type="hidden" name="subject" id="subject" value="">
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Nombre..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Nombre *</label
+                                    >
+                                    <input
+                                      type="text"
+                                      name="name"
+                                      id="name"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
+                                      placeholder="Nombre..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Email *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
-                                  <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0"
-                                    placeholder="Email..." required
-                                  />
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Email *</label
+                                    >
+                                    <input
+                                      type="email"
+                                      name="email"
+                                      id="email"
+                                      class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                      placeholder="Email válido..." required
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
-                                >
-                                  <label
-                                    for="name"
-                                    class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
-                                    >Mensaje *</label
+                                <div>
+                                  <div
+                                    class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
                                   >
-                                  <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje..."></textarea>
+                                    <label
+                                      for="name"
+                                      class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
+                                      >Mensaje *</label
+                                    >
+                                    <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje entre 20 y 500 caracteres..." minlength="20" maxlength="500" required></textarea>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="text-center w-full">
-                                <button type="button" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
-                                  <!--<svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  >
-                                    <path
+                                <div class="text-center w-full">
+                                  <button type="submit" name="send" id="sender" class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border-2 rounded-md" value="send">
+                                    <!--<svg xmlns="http://www.w3.org/2000/svg"
+                                      class="icon icon-tabler icon-tabler-heart w-6 h-6 mr-4"
+                                      viewBox="0 0 24 24"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      fill="none"
                                       stroke-linecap="round"
                                       stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                    />
-                                  </svg>-->
-                                  Enviar
-                                  <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
-                              </button>
-                              </div>
-                            <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper</strong>
-                              aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
-                              <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
-                              eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
-                            </p>
-                            <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
-                              <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
-                              egestas sagittis quisque orci.
-                            </p>
-                          </div>-->
-                      </form>
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                      />
+                                    </svg>-->
+                                    Enviar
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart w-6 h-6 ml-1" style="transform:rotate(40deg);"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>send</title><g id="send-Filled"><path id="send-Filled-2" data-name="send-Filled" class="cls-1" d="M21.421,5.669l-3.28,13.12a3.529,3.529,0,0,1-3.47,2.71h-.02a3.524,3.524,0,0,1-3.46-2.76l-.86-3.65,5.38-5.38a1,1,0,1,0-1.42-1.42l-5.38,5.38-3.65-.86a3.575,3.575,0,0,1-.05-6.95l13.12-3.28a2.548,2.548,0,0,1,3.09,3.09Z"/></g></svg>
+                                </button>
+                                </div>
+                              <!--<p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper</strong>
+                                aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra
+                                <a href="#" class="underline text-oyster hover:text-comet dark:text-manatee">aliquam porttitor ultrices gravida</a>
+                                eu aliquam venenatis egestas sagittis quisque orci. Donec commodo sit viverra aliquam porttitor ultrices gravida eu.
+                              </p>
+                              <p class="text-base font-light text-waterloo dark:text-santa sm:text-lg">
+                                <strong class="text-comet dark:text-manatee">Quis semper vulputate aliquam venenatis</strong>
+                                egestas sagittis quisque orci.
+                              </p>
+                            </div>-->
+                        </form>
                         <div>
                           <h6 class="text-sm font-normal underline text-comet dark:text-manatee hover:text-oyster">
                             <a href="https://github.com/LitGirl/lit/issues" target="_blank">Reportar errores del sitio en GitHub </a>
                           </h6>
                         </div>
-                      </div>
                       </div>
                     </div>
                   </section>
@@ -1989,6 +1994,7 @@
       </a>
     </div>
     <script type="text/javascript" src="../js/app.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ"></script>
+    <script type="text/javascript" src="../js/userinputs.min.js" charset="utf-8" nonce="qOmGiV7uvTsJadT14EVEWWkgc+/nOTSQ" async defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <script>
