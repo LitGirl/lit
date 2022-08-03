@@ -1668,15 +1668,17 @@
                                 </svg>
                               </a>
                             </h2>
-                            <form id="frm-contact" class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full" action="" method="post" enctype="application/x-www-form-urlencoded">
-                                <input type="hidden" name="subject" id="subject" required>
+                            <form id="frm-contact" name="frmLitgirl" class="space-y-6 inline-flex flex-col content-center dark:border-white relative px-3 py-3 border-2 rounded-lg max-full" action="" method="post" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="reason" id="reason" required>
+                                <input type="hidden" name="copy" id="copy" required>
+                                <p id="error" class="absolute rounded-xl border-smoke dark:bg-tuna dark:border-comet p-2 bg-white border-2 text-brink text-base font-medium text-center" style="border-color: rgba(254,107,136,1);display:none;left:0;top:-45px;width:100%;z-index:100"></p>
                                 <div>
                                   <div @click.away="open = false" class="relative mx-auto" x-data="{ open: false }">
                                     <button
                                       @click="open = !open"
                                       class="border-ultramarine hover:border-ultramarine bg-ultramarine hover:shadow-none hover:bg-oyster focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine inline-flex items-center px-10 py-2 font-normal text-center text-white transition duration-500 ease-in-out transform border rounded-md flex justify-center w-full text-center w-96 max-full" id="about" type="button"
                                     >
-                                      <span>Asunto del mensaje</span>
+                                      <span id="user-about">Asunto del mensaje</span>
                                       <svg
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
@@ -1703,17 +1705,22 @@
                                       <div id="about-text" class="px-2 py-2 bg-alabaster shadow dark:bg-cinder border-r border-smoke dark:border-gun dark:text-white">
                                         <a
                                           class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                          href="javascript:void(0);" data-subject="Colaborar"
+                                          href="javascript:void(0);" data-reason="collaborate"
                                           >Colaborar</a
                                         >
                                         <a
                                           class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                          href="javascript:void(0);" data-subject="Informar Problema"
+                                          href="javascript:void(0);" data-reason="suscribe"
+                                          >Suscribirme</a
+                                        >
+                                        <a
+                                          class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
+                                          href="javascript:void(0);" data-reason="problem"
                                           >Informar Problema</a
                                         >
                                         <a
                                           class="text-club md:mt-0 hover:text-ultramarine focus:text-gray-900 focus:outline-none focus:shadow-outline block px-4 py-2 mt-2 text-sm bg-transparent hover:bg-icy border-periblue dark:hover:bg-tuna"
-                                          href="javascript:void(0);" data-subject="Consulta"
+                                          href="javascript:void(0);" data-reason="contact"
                                           >Consulta</a
                                         >
                                       </div>
@@ -1744,7 +1751,7 @@
                                     class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg w-96 max-full"
                                   >
                                     <label
-                                      for="name"
+                                      for="email"
                                       class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
                                       >Email *</label
                                     >
@@ -1757,16 +1764,16 @@
                                     />
                                   </div>
                                 </div>
-                                <div>
+                                <div id="box-message">
                                   <div
                                     class="dark:border-white focus-within:ring-1 focus-within:ring-oyster focus-within:border-oyster relative px-3 py-2 border-2 rounded-lg"
                                   >
                                     <label
-                                      for="name"
+                                      for="message"
                                       class="text-club -top-2 left-2 dark:bg-tuna dark:text-white absolute inline-block px-1 -mt-px text-xs font-medium bg-white"
                                       >Mensaje *</label
                                     >
-                                    <textarea name="message" id="message" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje entre 20 y 500 caracteres..." minlength="20" maxlength="500" required></textarea>
+                                    <textarea name="msg" id="msg" class="placeholder-cat focus:ring-0 sm:text-sm block w-full py-1 text-white bg-transparent border-0 h-32" placeholder="Mensaje entre 20 y 500 caracteres..." minlength="20" maxlength="500" required></textarea>
                                   </div>
                                 </div>
                                 <div class="text-center w-full">
@@ -1806,6 +1813,8 @@
                                 egestas sagittis quisque orci.
                               </p>
                             </div>-->
+                            <div id="preloader" class="test-preload absolute inline-flex flex-col content-center items-center px-3 py-3 rounded-lg w-full h-full" style="display:none">
+                            </div>
                         </form>
                         <div>
                           <h6 class="text-sm font-normal underline text-comet dark:text-manatee hover:text-oyster">
